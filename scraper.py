@@ -4,6 +4,7 @@ import re
 from re import Pattern
 import unicodedata
 import html
+import zipfile
 import os
 import random
 import time
@@ -12,6 +13,7 @@ from urllib.parse import urljoin
 import shutil
 import logging
 import json
+from pathlib import Path
 from typing import (
     Any,
     Dict,
@@ -20,6 +22,7 @@ from typing import (
     List,
     Literal,
     Optional,
+    Tuple,
     TypeAlias,
     Union
 )
@@ -86,11 +89,13 @@ message_field_text_attr = AttributePattern(
     recursive=False
 )
 
+FILE_EXTENSIONS = ('.xsd', '.xsd.zip')
 TOTAL_DOWNLOAD_WAIT_TIME = 15
 MAX_REQUESTS = 3
 DOWNLOAD_WAIT_TIME = 0.5
-DOWNLOAD_PATH = os.path.abspath(os.getcwd()) 
-DOWNLOAD_SAVE_PATH = os.path.join(DOWNLOAD_PATH, 'iso20022-schemas')
+REPOSITORY_PATH = os.path.abspath(os.getcwd())
+DOWNLOAD_PATH = os.path.join(REPOSITORY_PATH, 'downloads')
+DOWNLOAD_SAVE_PATH = os.path.join(REPOSITORY_PATH, 'iso20022-schemas')
 ISO_MESSAGES_URL = "https://www.iso20022.org/iso-20022-message-definitions"
 DOWNLOAD_PREFERENCES = {
     "download.default_directory": DOWNLOAD_PATH,
@@ -151,7 +156,16 @@ def join_text(text: Iterable[str]) -> str:
     return ' '.join(text).strip()
 
 
-def move_downloaded_file(src: str, dst: str) -> None:
+def find_files_by_extension(
+    extensions: Union[str, Tuple[str, ...]]
+) -> Generator[str, None, None]:
+    return (
+        file for file in os.listdir(DOWNLOAD_PATH)
+        if file.endswith(extensions)
+    )
+
+
+def move_downloaded_file(src: Path, dst: Path) -> None:
     os.makedirs(os.path.dirname(dst), exist_ok=True)
     shutil.move(src=src, dst=dst)
 
@@ -280,9 +294,7 @@ def download_iso20022_messages(
             downloaded_filename is None and
             time.time() - start_time_to_wait < TOTAL_DOWNLOAD_WAIT_TIME
         ):
-            downloaded_files: Generator[str, None, None] = (
-                file for file in os.listdir(DOWNLOAD_PATH) if file.endswith('.xsd')
-            )
+            downloaded_files = find_files_by_extension(extensions=FILE_EXTENSIONS)
             try:
                 downloaded_filename = next(downloaded_files)
             except StopIteration:
@@ -296,8 +308,18 @@ def download_iso20022_messages(
             )
             continue
 
-        downloaded_file = os.path.join(DOWNLOAD_PATH, downloaded_filename)
-        new_download_file = os.path.join(
+        downloaded_file = Path(DOWNLOAD_PATH, downloaded_filename)
+        if downloaded_file.suffix == '.zip':
+            with zipfile.ZipFile(downloaded_file, 'r') as zip_ref:
+                zip_ref.extractall(downloaded_file.parent)
+
+            os.remove(downloaded_file)
+            downloaded_filename = next(
+                find_files_by_extension(extensions='.xsd')
+            )
+            downloaded_file = downloaded_file.with_name(downloaded_filename)
+            
+        new_download_file = Path(
             DOWNLOAD_SAVE_PATH, 
             iso_20022_message.message_set, 
             downloaded_filename
