@@ -89,7 +89,7 @@ message_field_text_attr = AttributePattern(
     recursive=False
 )
 
-FILE_EXTENSIONS = ('.xsd', '.xsd.zip')
+FILE_EXTENSIONS = ('.xsd', '.zip')
 TOTAL_DOWNLOAD_WAIT_TIME = 15
 MAX_REQUESTS = 3
 DOWNLOAD_WAIT_TIME = 0.5
