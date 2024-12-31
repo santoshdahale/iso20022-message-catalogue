@@ -82,73 +82,27 @@ DOWNLOAD_PREFERENCES = {
     "safebrowsing.enabled": True
 }
 
-def conditional_log(func):
-    def inner(*args, **kwargs):
-        elements = kwargs.pop('elements')
-        if not elements:
-            func(*args, **kwargs)
-    return inner
+def setup_logger(name: str) -> logging.Logger:
+    logger = logging.getLogger(name)
+    logger.setLevel(logging.DEBUG)
+
+    # Create a StreamHandler
+    stream_handler = logging.StreamHandler()
+    stream_handler.setLevel(logging.DEBUG)
+
+    # Custom formatter for the handler
+    formatter = logging.Formatter(
+        '%(levelname)s - %(asctime)s - %(message)s',
+        datefmt='%Y-%m-%d %H:%M:%S'
+    )
+    stream_handler.setFormatter(formatter)
+
+    # Add handler to the logger
+    logger.addHandler(stream_handler)
+    return logger
 
 
-class MessageLogger:
-    def __init__(self, name: str) -> None:
-        self.logger = logging.getLogger(name)
-        self.logger.setLevel(logging.DEBUG)
-
-        # Create a StreamHandler
-        stream_handler = logging.StreamHandler()
-        stream_handler.setLevel(logging.DEBUG)
-
-        # Custom formatter for the handler
-        formatter = logging.Formatter(
-            '%(levelname)s - %(asctime)s - %(message)s',
-            datefmt='%Y-%m-%d %H:%M:%S'
-        )
-        stream_handler.setFormatter(formatter)
-
-        # Add handler to the logger
-        self.logger.addHandler(stream_handler)
-
-    def log_success(self, message_set: str, filename: str) -> None:
-        self.logger.info(
-            f'successfully downloaded {message_set} file: {filename}'
-        )
-    
-    def log_issue(self, **kwargs) -> None:
-        issue_type = kwargs.pop('issue_type')
-        issue_desc = kwargs.pop('issue_desc')
-        set_number = kwargs.pop('set_number')
-        message_number = kwargs.pop('message_Number')
-        message = (
-            f"type: {issue_type} - "
-            f"desc: {issue_desc} - "
-            f"set-number: {set_number} - "
-            f"message-number: {message_number}"
-        )
-        self.logger.error(message)
-
-    @conditional_log
-    def log_html_parsing_issue(self, **kwargs) -> None:
-        kwargs['issue_type'] = 'html-parsing'
-        kwargs['issue_desc'] = catalog_messages_attr.description
-        self.log_issue(**kwargs)
-
-    @conditional_log
-    def log_field_parsing_issue(self, **kwargs) -> None:
-        kwargs['issue_type'] = 'html-parsing'
-        kwargs['issue_desc'] = message_field_text_attr.description
-        self.log_issue(**kwargs)
-
-    def log_field_validation_issue(self, **kwargs) -> None:
-        kwargs['issue_type'] = 'field-validation'
-        self.log_issue(**kwargs)
-
-    def log_link_parsing_issue(self, **kwargs) -> None:
-        kwargs['issue_type'] = 'link-parsing'
-        self.log_issue(**kwargs)
-
-
-logger = MessageLogger(__name__)
+logger = setup_logger(__name__)
 
 
 def setup_chrome_driver() -> webdriver.Chrome:
@@ -222,25 +176,23 @@ def download_iso20022_files(
     )
     assert catalog_areas, 'could not find message set HTML tag'
         
-    for area_idx, area in enumerate(catalog_areas):
-        set_number = area_idx + 1
+    for area in catalog_areas:
         area_messages: ResultSet[Tag] = area.find_all(
             **catalog_messages_attr.find_kwargs
         )
-        logger.log_html_parsing_issue(
-            elements=area_messages, set_number=set_number
-        )
+        if not area_messages:
+            logger.error(
+                'unsuccessfully parsed the message HTML elements'
+            )
+            continue
         
-        for message_idx, message in enumerate(area_messages):
-            message_number = message_idx + 1
+        for message in area_messages:
             elements: ResultSet[Tag] = message.find_all(
                 **message_field_text_attr.find_kwargs
             )
-            logger.log_field_parsing_issue(
-                elements=elements,
-                set_number=set_number,
-                message_number=message_number
-            )
+            if not elements:
+                logger.error('unsuccessfully parsed the field text HTML elements')
+                continue
 
             message_fields = get_message_fields(elements=elements)
             assert len(message_fields) == 3
@@ -249,19 +201,11 @@ def download_iso20022_files(
             message_id, message_name, organization = message_fields
             
             if not validate_message_id(message_id=message_id):
-                logger.log_field_validation_issue(
-                    issue_desc='id validation',
-                    set_number=set_number,
-                    message_number=message_number
-                )
+                logger.error('unsuccessfully validated the ID field')
                 continue
 
             if not validate_message_name(message_name=message_name):
-                logger.log_field_validation_issue(
-                    issue_desc='name validation',
-                    set_number=set_number,
-                    message_number=message_number
-                )
+                logger.error('unsuccessfully validated the name field')
                 continue
 
             message_set = message_id.split('.')[0].strip()
@@ -269,9 +213,7 @@ def download_iso20022_files(
             # Retrieve the download link for the schema
             xsd_link = message.find('a')
             if xsd_link is None:
-                logger.log_link_parsing_issue(
-                    set_number=set_number, message_number=message_number
-                )
+                logger.error('unsuccessfully parsed the xsd download link')
                 continue
 
             full_download_link = urljoin(ISO_MESSAGES_URL, xsd_link['href'])
@@ -307,11 +249,10 @@ def download_iso20022_files(
             set_messages = messages[message_set]
             set_messages[downloaded_filename] = message_record
 
-            random_sleep()
-
-            logger.log_success(
-                message_set=message_set, filename=downloaded_filename
+            logger.info(
+                f'successfully downloaded {message_set} file: {downloaded_filename}'
             )
+            random_sleep()
         random_sleep()
 
 
