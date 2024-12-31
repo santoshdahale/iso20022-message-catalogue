@@ -28,6 +28,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup, ResultSet, Tag
+from pydantic import BaseModel
 
 HTMLTag: TypeAlias = Literal['div']
 TagAttribute: TypeAlias = Literal['id', 'class']
@@ -51,6 +52,18 @@ class AttributePattern:
         if self.attribute is None or self.pattern is None:
             del kwargs['attrs']
         return kwargs
+
+
+class ISO20022Message(BaseModel):
+    message_id: str
+    message_name: str
+    submitting_organization: str
+    download_link: str
+
+    @property
+    def message_set(self) -> str:
+        return self.message_id.split('.')[0].strip()
+
 
 # Constants and global variables
 catalog_area_attr = AttributePattern(
@@ -148,7 +161,7 @@ def validate_message_name(message_name: str) -> str:
 
 
 def random_sleep() -> None:
-    random_time = round(random.uniform(1, 3), 1)
+    random_time = round(random.uniform(1, 5), 1)
     time.sleep(random_time)
 
 
@@ -161,9 +174,8 @@ def get_message_fields(elements: ResultSet[Tag]) -> List[str]:
     return message_fields
 
 
-def download_iso20022_files(
-    driver: webdriver.Chrome, messages: Dict[str, Dict[str, str]]
-) -> None:
+def gather_iso20022_messages(driver: webdriver.Chrome) -> List[ISO20022Message]:
+    iso_20022_messages: List[ISO20022Message] = list()
     driver.get(ISO_MESSAGES_URL)
 
     # Wait for page load and get page source
@@ -208,8 +220,6 @@ def download_iso20022_files(
                 logger.error('unsuccessfully validated the name field')
                 continue
 
-            message_set = message_id.split('.')[0].strip()
-
             # Retrieve the download link for the schema
             xsd_link = message.find('a')
             if xsd_link is None:
@@ -217,59 +227,71 @@ def download_iso20022_files(
                 continue
 
             full_download_link = urljoin(ISO_MESSAGES_URL, xsd_link['href'])
-            driver.get(full_download_link)
-
-            downloaded_filename: Optional[str] = None
-            while downloaded_filename is None:
-                downloaded_files: Generator[str, None, None] = (
-                    file for file in os.listdir(DOWNLOAD_PATH) if file.endswith('.xsd')
+            iso_20022_messages.append(
+                ISO20022Message(
+                    message_id=message_id,
+                    message_name=message_name,
+                    submitting_organization=organization,
+                    download_link=full_download_link
                 )
-                try:
-                    downloaded_filename = next(downloaded_files)
-                except StopIteration:
-                    pass
-                time.sleep(DOWNLOAD_WAIT_TIME)
-
-            downloaded_file = os.path.join(DOWNLOAD_PATH, downloaded_filename)
-            new_download_file = os.path.join(
-                DOWNLOAD_SAVE_PATH, 
-                message_set, 
-                downloaded_filename
             )
+    return iso_20022_messages
 
-            move_downloaded_file(downloaded_file, new_download_file)
-            if message_set not in messages:
-                messages[message_set] = dict()
-            
-            message_record: Dict[str, str] = {
-                'message_id': message_id,
-                'message_name': message_name,
-                'submitting_organization': organization
-            }
-            set_messages = messages[message_set]
-            set_messages[downloaded_filename] = message_record
 
-            logger.info(
-                f'successfully downloaded {message_set} file: {downloaded_filename}'
+def download_iso20022_files(
+    driver: webdriver.Chrome, messages: List[ISO20022Message],
+) -> Dict[str, Dict[str, str]]:
+    metadata: Dict[str, Dict[str, str]] = dict()
+    for iso_20022_message in messages:
+        driver.get(iso_20022_message.download_link)
+
+        downloaded_filename: Optional[str] = None
+        while downloaded_filename is None:
+            downloaded_files: Generator[str, None, None] = (
+                file for file in os.listdir(DOWNLOAD_PATH) if file.endswith('.xsd')
             )
-            random_sleep()
+            try:
+                downloaded_filename = next(downloaded_files)
+            except StopIteration:
+                pass
+            time.sleep(DOWNLOAD_WAIT_TIME)
+
+        downloaded_file = os.path.join(DOWNLOAD_PATH, downloaded_filename)
+        new_download_file = os.path.join(
+            DOWNLOAD_SAVE_PATH, 
+            iso_20022_message.message_set, 
+            downloaded_filename
+        )
+
+        move_downloaded_file(downloaded_file, new_download_file)
+        if iso_20022_message.message_set not in metadata:
+            metadata[iso_20022_message.message_set] = dict()
+        
+        set_metadata = metadata[iso_20022_message.message_set]
+        set_metadata[downloaded_filename] = iso_20022_message.model_dump()
+
+        logger.info(
+            'successfully downloaded '
+            f'{iso_20022_message.message_set} file: {downloaded_filename}'
+        )
         random_sleep()
+    random_sleep()
 
 
-def save_message_metadata_to_json(messages: Dict[str, Dict[str, str]], filename: str) -> None:
+def save_message_metadata_to_json(metadata: Dict[str, Dict[str, str]], filename: str) -> None:
     with open(filename, 'w', encoding='utf-8') as json_file:
-        json.dump(messages, json_file, indent=4, ensure_ascii=False)
+        json.dump(metadata, json_file, indent=4, ensure_ascii=False)
 
 
 if __name__ == "__main__":
-    messages: Dict[str, Dict[str, str]] = dict()
     driver: webdriver.Chrome = setup_chrome_driver()
 
     # Downloading of ISO 20022 message schemas
-    download_iso20022_files(driver=driver, messages=messages)
+    messages = gather_iso20022_messages(driver=driver)
+    metadata = download_iso20022_files(driver=driver, messages=messages)
     driver.quit()
 
     # Save ISO 20022 message metadata as a JSON file
     save_message_metadata_to_json(
-        messages=messages, filename='iso20022_messages.json'
+        metadata=metadata, filename='iso20022_messages.json'
     )
