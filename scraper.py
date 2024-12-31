@@ -89,8 +89,8 @@ message_field_text_attr = AttributePattern(
 TOTAL_DOWNLOAD_WAIT_TIME = 15
 MAX_REQUESTS = 3
 DOWNLOAD_WAIT_TIME = 0.5
-DOWNLOAD_PATH = r''
-DOWNLOAD_SAVE_PATH = r'iso20022-schemas'
+DOWNLOAD_PATH = os.path.abspath(os.getcwd()) 
+DOWNLOAD_SAVE_PATH = os.path.join(DOWNLOAD_PATH, 'iso20022-schemas')
 ISO_MESSAGES_URL = "https://www.iso20022.org/iso-20022-message-definitions"
 DOWNLOAD_PREFERENCES = {
     "download.default_directory": DOWNLOAD_PATH,
