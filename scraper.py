@@ -25,6 +25,7 @@ from typing import (
 )
 
 from selenium import webdriver
+from selenium.common.exceptions import WebDriverException, TimeoutException
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup, ResultSet, Tag
@@ -84,6 +85,8 @@ message_field_text_attr = AttributePattern(
     recursive=False
 )
 
+TOTAL_DOWNLOAD_WAIT_TIME = 15
+MAX_REQUESTS = 3
 DOWNLOAD_WAIT_TIME = 0.5
 DOWNLOAD_PATH = r''
 DOWNLOAD_SAVE_PATH = r''
@@ -174,6 +177,20 @@ def get_message_fields(elements: ResultSet[Tag]) -> List[str]:
     return message_fields
 
 
+def request_download_link(download_link: str, driver: webdriver.Chrome) -> bool:
+    request_success = False
+    num_requests = 0
+    while not request_success:
+        try:
+            driver.get(download_link)
+            request_success = True
+        except (WebDriverException, TimeoutException):
+            num_requests += 1
+            request_success = num_requests == MAX_REQUESTS
+            random_sleep()
+    return request_success
+
+
 def gather_iso20022_messages(driver: webdriver.Chrome) -> List[ISO20022Message]:
     iso_20022_messages: List[ISO20022Message] = list()
     driver.get(ISO_MESSAGES_URL)
@@ -207,7 +224,7 @@ def gather_iso20022_messages(driver: webdriver.Chrome) -> List[ISO20022Message]:
                 continue
 
             message_fields = get_message_fields(elements=elements)
-            assert len(message_fields) == 3
+            assert len(message_fields) == 3, 'incorrect number of fields, expected 3'
 
             # Message metadata
             message_id, message_name, organization = message_fields
@@ -238,15 +255,28 @@ def gather_iso20022_messages(driver: webdriver.Chrome) -> List[ISO20022Message]:
     return iso_20022_messages
 
 
-def download_iso20022_files(
+def download_iso20022_messages(
     driver: webdriver.Chrome, messages: List[ISO20022Message],
 ) -> Dict[str, Dict[str, str]]:
     metadata: Dict[str, Dict[str, str]] = dict()
     for iso_20022_message in messages:
-        driver.get(iso_20022_message.download_link)
+        request_success = request_download_link(
+            download_link=iso_20022_message.download_link, driver=driver
+        )
 
+        if not request_success:
+            logger.error(
+                'unsuccessfully requested the download link: '
+                f'{iso_20022_message.download_link}'
+            )
+            continue
+
+        start_time_to_wait = time.time()
         downloaded_filename: Optional[str] = None
-        while downloaded_filename is None:
+        while (
+            downloaded_filename is None and
+            time.time() - start_time_to_wait < TOTAL_DOWNLOAD_WAIT_TIME
+        ):
             downloaded_files: Generator[str, None, None] = (
                 file for file in os.listdir(DOWNLOAD_PATH) if file.endswith('.xsd')
             )
@@ -255,6 +285,10 @@ def download_iso20022_files(
             except StopIteration:
                 pass
             time.sleep(DOWNLOAD_WAIT_TIME)
+
+        if downloaded_filename is None:
+            logger.error('unsuccessfully downloaded the message schema')
+            continue
 
         downloaded_file = os.path.join(DOWNLOAD_PATH, downloaded_filename)
         new_download_file = os.path.join(
@@ -272,10 +306,10 @@ def download_iso20022_files(
 
         logger.info(
             'successfully downloaded '
-            f'{iso_20022_message.message_set} file: {downloaded_filename}'
+            f'{iso_20022_message.message_set} schema: {downloaded_filename}'
         )
         random_sleep()
-    random_sleep()
+    return metadata
 
 
 def save_message_metadata_to_json(metadata: Dict[str, Dict[str, str]], filename: str) -> None:
@@ -288,7 +322,7 @@ if __name__ == "__main__":
 
     # Downloading of ISO 20022 message schemas
     messages = gather_iso20022_messages(driver=driver)
-    metadata = download_iso20022_files(driver=driver, messages=messages)
+    metadata = download_iso20022_messages(driver=driver, messages=messages)
     driver.quit()
 
     # Save ISO 20022 message metadata as a JSON file
