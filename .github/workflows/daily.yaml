@@ -21,6 +21,11 @@ jobs:
       with:
         python-version: '3.12'
 
+    - name: Install Google Chrome
+      run: |
+        sudo apt update
+        sudo apt install -y google-chrome-stable
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip

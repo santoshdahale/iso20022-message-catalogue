@@ -24,6 +24,7 @@ from typing import (
     Union
 )
 
+from faker import Faker
 from selenium import webdriver
 from selenium.common.exceptions import WebDriverException, TimeoutException
 from selenium.webdriver.chrome.service import Service
@@ -89,7 +90,7 @@ TOTAL_DOWNLOAD_WAIT_TIME = 15
 MAX_REQUESTS = 3
 DOWNLOAD_WAIT_TIME = 0.5
 DOWNLOAD_PATH = r''
-DOWNLOAD_SAVE_PATH = r''
+DOWNLOAD_SAVE_PATH = r'iso20022-schemas'
 ISO_MESSAGES_URL = "https://www.iso20022.org/iso-20022-message-definitions"
 DOWNLOAD_PREFERENCES = {
     "download.default_directory": DOWNLOAD_PATH,
@@ -125,7 +126,9 @@ def setup_chrome_driver() -> webdriver.Chrome:
     options = webdriver.ChromeOptions()
     options.add_experimental_option("prefs", DOWNLOAD_PREFERENCES)
     options.add_argument("--headless")
-    options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0;Win64;x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+    options.add_argument(f"user-agent={Faker().user_agent()}")
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=options)
     return driver
@@ -287,7 +290,10 @@ def download_iso20022_messages(
             time.sleep(DOWNLOAD_WAIT_TIME)
 
         if downloaded_filename is None:
-            logger.error('unsuccessfully downloaded the message schema')
+            logger.error(
+                'unsuccessfully downloaded the message schema for download: '
+                f'{iso_20022_message.download_link}'
+            )
             continue
 
         downloaded_file = os.path.join(DOWNLOAD_PATH, downloaded_filename)
