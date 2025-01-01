@@ -6,37 +6,50 @@ A lightweight Python script that automatically downloads and tracks ISO20022 mes
 
 - Downloads all available ISO20022 XSD schemas daily.
 - Generates and updates a JSON file containing metadata for each schema.
-- Provides detailed information about each schema, including its filename, identifier, name, submitting organization and download link.
+- Provides detailed information about each schema, including its identifier, name, submitting organization and download link.
+- Provides basic information about each set, including its abbreviation and download link (for batch download).
 - Includes a GitHub Action that runs the downloader daily at midnight, ensuring the repository stays current.
 
 ## Repository Structure
 
 ```plaintext
 iso20022-message-catalogue/
-├── .github/workflows/     # CI/CD workflows
-├── .gitignore             # Git ignore file
-├── LICENSE                # Project license
-├── README.md              # Project documentation
-├── iso20022-schemas/      # Directory to store downloaded XSD schemas
-├── iso20022_messages.json # JSON file with metadata for schemas
-├── requirements.txt       # Python dependencies
-├── scraper.py             # The main downloader script
+├── .github/workflows/      # CI/CD workflows
+├── iso20022-schemas/       # Directory to store downloaded XSD schemas
+├── .gitignore              # Git ignore file
+├── LICENSE                 # Project license
+├── README.md               # Project documentation
+├── iso20022_messages.json  # JSON file with metadata for messages
+├── iso20022_sets.json      # JSON file with metadata for sets
+├── requirements.txt        # Python dependencies
+├── scraper.py              # The main downloader script
 ```
 
 ## How It Works
 
-The script `scraper.py` fetches all available ISO20022 message XSD schemas and saves them in the `iso20022-schemas/` directory. It also updates `iso20022_messages.json`, a JSON file that contains metadata for each schema, such as its filename, identifier and name.
+The script `scraper.py` fetches all available ISO20022 message XSD schemas and saves them in the `iso20022-schemas/` directory. It also updates `iso20022_sets.json` and `iso20022_messages.json`, a JSON files that contains metadata for each set and schema respectively.
 
 A GitHub Action is configured to run `scraper.py` every day at midnight (UTC). This ensures the XSD schemas and metadata remain up to date.
 
 Here’s an example entry from `iso20022_messages.json`:
 
 ```json
-"acmt.001.001.08.xsd": {
-    "message_id": "acmt.001.001.08",
-    "message_name": "AccountOpeningInstructionV08",
-    "submitting_organization": "SWIFT",
-    "download_link": "https://www.iso20022.org/message/20266/download"
+"acmt": [
+    {
+        "message_id": "acmt.001.001.08",
+        "message_name": "AccountOpeningInstructionV08",
+        "submitting_organization": "SWIFT",
+        "download_link": "https://www.iso20022.org/message/20266/download"
+    },
+]
+```
+
+Here’s an example entry from `iso20022_sets.json`:
+
+```json
+{
+    "message_set": "acmt",
+    "download_link": "https://www.iso20022.org/business-area/26/download"
 }
 ```
 
@@ -68,11 +81,11 @@ Run the downloader script manually:
 python scraper.py
 ```
 
-This will download the latest XSD schemas and update the `iso20022_messages.json` file with their metadata.
+This will download the latest XSD schemas and update the JSON files with their metadata.
 
 Alternatively, rely on the GitHub Action to automatically update the schemas and metadata daily.
 
-Access the schemas in the `iso20022-schemas/` directory and metadata in `iso20022_messages.json` for integration into other projects or analysis.
+Access the schemas in the `iso20022-schemas/` directory where the schemas are sorted into folders based on the associated message set.
 
 ## License
 
