@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import (
     Any,
     Dict,
+    Generator,
     Iterable,
     List,
     Literal,
@@ -90,7 +91,6 @@ class ISO20022Schema(BaseModel):
 
 
 # Constants and global variables
-message_field_text_attr = AttributePattern(tag='div')
 catalog_area_attr = AttributePattern(
     tag='div',
     attribute='id',
@@ -162,6 +162,18 @@ def get_element_text(element: Tag) -> str:
     raw_text = element.find_all(string=True, recursive=False)
     cleaned_text = clean_html_text(raw_text=raw_text)
     return cleaned_text
+
+
+def find_zip_files(path: str) -> Generator[str, None, None]:
+    return (
+        file for file in os.listdir(path)
+        if file.endswith('.zip')
+    )
+
+
+def extract_zipfile(src: str, dest: str) -> None:
+    with zipfile.ZipFile(src, 'r') as zip_ref:
+        zip_ref.extractall(dest)
 
 
 def join_text(text: Iterable[str]) -> str:
@@ -269,9 +281,7 @@ def gather_iso20022_messages(driver: webdriver.Chrome) -> List[ISO20022BatchDown
             assert area_messages, 'no message HTML elements detected'
             
             for message in area_messages:
-                elements: ResultSet[Tag] = message.find_all(
-                    **message_field_text_attr.find_kwargs
-                )
+                elements: ResultSet[Tag] = message.find_all('div')
                 iso_20022_message = get_message_schema(
                     message=message, elements=elements
                 )
@@ -309,10 +319,7 @@ def download_iso20022_messages(
             downloaded_filename is None and
             time.time() - start_time_to_wait < TOTAL_DOWNLOAD_WAIT_TIME
         ):
-            downloaded_files = (
-                file for file in os.listdir(DOWNLOAD_PATH)
-                if file.endswith('.zip')
-            )
+            downloaded_files = find_zip_files(path=DOWNLOAD_PATH)
             try:
                 downloaded_filename = next(downloaded_files)
             except StopIteration:
@@ -326,14 +333,24 @@ def download_iso20022_messages(
             )
             continue
 
-        downloaded_file = Path(DOWNLOAD_PATH, downloaded_filename)
+        downloaded_path = Path(DOWNLOAD_PATH, downloaded_filename)
         file_extraction_path = Path(
             DOWNLOAD_SAVE_PATH, 
             iso_20022_batch.message_set
         )
-        with zipfile.ZipFile(downloaded_file, 'r') as zip_ref:
-            zip_ref.extractall(file_extraction_path)
-        os.remove(downloaded_file)
+        extract_zipfile(downloaded_path, file_extraction_path)
+        residual_zip_files = find_zip_files(path=file_extraction_path)
+        parsing_zip_files = True
+        while parsing_zip_files:
+            try:
+                zip_filename = next(residual_zip_files)
+            except StopIteration:
+                parsing_zip_files = False
+            zip_file_path = os.path.join(file_extraction_path, zip_filename)
+            extract_zipfile(zip_file_path, file_extraction_path)
+            os.remove(zip_file_path)
+        
+        os.remove(downloaded_path)
         
         metadata.update_metadata(batch=iso_20022_batch)
         logger.info(
