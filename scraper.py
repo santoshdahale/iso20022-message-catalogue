@@ -12,7 +12,6 @@ from dataclasses import dataclass
 from urllib.parse import urlencode, urljoin
 import logging
 import json
-from pathlib import Path
 from typing import (
     Any,
     Dict,
@@ -333,8 +332,8 @@ def download_iso20022_messages(
             )
             continue
 
-        downloaded_path = Path(DOWNLOAD_PATH, downloaded_filename)
-        file_extraction_path = Path(
+        downloaded_path = os.path.join(DOWNLOAD_PATH, downloaded_filename)
+        file_extraction_path = os.path.join(
             DOWNLOAD_SAVE_PATH, 
             iso_20022_batch.message_set
         )
@@ -346,9 +345,10 @@ def download_iso20022_messages(
                 zip_filename = next(residual_zip_files)
             except StopIteration:
                 parsing_zip_files = False
-            zip_file_path = os.path.join(file_extraction_path, zip_filename)
-            extract_zipfile(zip_file_path, file_extraction_path)
-            os.remove(zip_file_path)
+            else:
+                zip_file_path = os.path.join(file_extraction_path, zip_filename)
+                extract_zipfile(zip_file_path, file_extraction_path)
+                os.remove(zip_file_path)
         
         os.remove(downloaded_path)
         
