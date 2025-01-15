@@ -64,7 +64,7 @@
         "download_link": "https://www.iso20022.org/business-area/61/download"
     },
     {
-        "message_set": "reda",
+        "message_set": "colr",
         "download_link": "https://www.iso20022.org/business-area/66/download"
     },
     {
@@ -94,10 +94,6 @@
     {
         "message_set": "secl",
         "download_link": "https://www.iso20022.org/business-area/96/download"
-    },
-    {
-        "message_set": "seev",
-        "download_link": "https://www.iso20022.org/business-area/101/download"
     },
     {
         "message_set": "seev",
