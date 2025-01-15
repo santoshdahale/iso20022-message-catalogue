@@ -5,13 +5,14 @@ from re import Pattern
 import unicodedata
 import html
 import zipfile
-import os
 import random
 import time
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from urllib.parse import urlencode, urljoin
 import logging
 import json
+import shutil
+from pathlib import Path
 from typing import (
     Any,
     Dict,
@@ -20,6 +21,7 @@ from typing import (
     List,
     Literal,
     Optional,
+    Set,
     TypeAlias,
     Union
 )
@@ -30,7 +32,7 @@ from selenium.common.exceptions import WebDriverException, TimeoutException
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup, ResultSet, Tag
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 HTMLTag: TypeAlias = Literal['div']
 TagAttribute: TypeAlias = Literal['id', 'class']
@@ -54,13 +56,15 @@ class AttributePattern:
         return kwargs
 
 
+@dataclass
 class ISO20022Metadata:
-    def __init__(self) -> None:
-        self.batches: List[Dict[str, str]] = list()
-        self.messages: Dict[str, list] = dict()
+    batches: List[Dict[str, str]] = field(default_factory=list)
+    messages: Dict[str, list] = field(default_factory=dict)
 
     def update_metadata(self, batch: ISO20022BatchDownload) -> None:
-        self.messages[batch.message_set] = batch.messages
+        self.messages[batch.message_set] = [
+            message.model_dump() for message in batch.messages
+        ]
         self.batches.append(batch.model_dump())
 
     def save_metadata_to_json(self) -> None:
@@ -75,18 +79,20 @@ class ISO20022Metadata:
 class ISO20022BatchDownload(BaseModel):
     message_set: str
     download_link: str
-    messages: List[dict] = Field(exclude=True)
+    messages: Set[ISO20022Schema] = Field(exclude=True)
 
 
 class ISO20022Schema(BaseModel):
-    message_id: str
-    message_name: str
+    model_config = ConfigDict(frozen=True)
+
+    message_id: str = Field(..., pattern=r"^[a-z]{4}\.\d{3}\.\d{3}\.\d{2}$")
+    message_name: str = Field(..., pattern=r"V\d{2}$")
     submitting_organization: str
     download_link: str
 
     @property
     def message_set(self) -> str:
-        return self.message_id.split('.')[0].strip()
+        return message_set_from_message_id(message_id=self.message_id)
 
 
 # Constants and global variables
@@ -102,14 +108,14 @@ catalog_messages_attr = AttributePattern(
 )
 
 TOTAL_DOWNLOAD_WAIT_TIME = 15
-MAX_REQUESTS = 3
+MAX_REQUESTS = 5
 DOWNLOAD_WAIT_TIME = 0.5
-REPOSITORY_PATH = os.path.abspath(os.getcwd())
-DOWNLOAD_PATH = os.path.join(REPOSITORY_PATH, 'downloads')
-DOWNLOAD_SAVE_PATH = os.path.join(REPOSITORY_PATH, 'iso20022-schemas')
+REPOSITORY_PATH = Path.cwd().resolve()
+DOWNLOAD_PATH = Path(REPOSITORY_PATH, 'downloads')
+DOWNLOAD_SAVE_PATH = Path(REPOSITORY_PATH, 'iso20022-schemas')
 ISO_MESSAGES_URL = "https://www.iso20022.org/iso-20022-message-definitions"
 DOWNLOAD_PREFERENCES = {
-    "download.default_directory": DOWNLOAD_PATH,
+    "download.default_directory": str(DOWNLOAD_PATH),
     "download.prompt_for_download": False,
     "download.directory_upgrade": True,
     "safebrowsing.enabled": True
@@ -163,14 +169,18 @@ def get_element_text(element: Tag) -> str:
     return cleaned_text
 
 
-def find_zip_files(path: str) -> Generator[str, None, None]:
+def find_zip_files(path: Path) -> Generator[str, None, None]:
     return (
-        file for file in os.listdir(path)
-        if file.endswith('.zip')
+        file for file in path.iterdir()
+        if file.suffix == '.zip'
     )
 
 
-def extract_zipfile(src: str, dest: str) -> None:
+def message_set_from_message_id(message_id: str) -> str:
+    return message_id.split('.')[0].strip()
+
+
+def extract_zipfile(src: Path, dest: Path) -> None:
     with zipfile.ZipFile(src, 'r') as zip_ref:
         zip_ref.extractall(dest)
 
@@ -179,14 +189,9 @@ def join_text(text: Iterable[str]) -> str:
     return ' '.join(text).strip()
 
 
-def validate_message_id(message_id: str) -> bool:
-    PATTERN = r"^[a-zA-Z]{4}\.\d{3}\.\d{3}\.\d{2}$"
-    return bool(re.match(PATTERN, message_id))
-
-
-def validate_message_name(message_name: str) -> str:
-    PATTERN = r"V\d{2}$"
-    return bool(re.search(PATTERN, message_name))
+def validate_message_set(message_set: str) -> bool:
+    PATTERN = r"^[a-z]{4}$"
+    return bool(re.match(PATTERN, message_set))
 
 
 def random_sleep() -> None:
@@ -198,6 +203,16 @@ def build_page_url(url: str, page: int) -> str:
     params = {"page": page}
     query_string = urlencode(query=params)
     return f'{url}?{query_string}'
+
+
+def clear_all_items_in_path(path: Path) -> None:
+    shutil.rmtree(path)
+    path.mkdir(exist_ok=True)
+
+
+def move_file(src: Path, dst: Path) -> None:
+    dst.parent.mkdir(exist_ok=True)
+    shutil.move(src, dst)
 
 
 def get_message_fields(elements: ResultSet[Tag]) -> List[str]:
@@ -230,8 +245,6 @@ def get_message_schema(message: Tag, elements: ResultSet[Tag]) -> ISO20022Schema
     assert len(message_fields) == 3, 'invalid number of fields'
 
     message_id, message_name, organization = message_fields    
-    assert validate_message_id(message_id=message_id), 'invalid ID field'
-    assert validate_message_name(message_name=message_name), 'invalid name field'
     
     # Retrieve the download link for the schema
     xsd_link = message.find('a')
@@ -246,7 +259,8 @@ def get_message_schema(message: Tag, elements: ResultSet[Tag]) -> ISO20022Schema
 
 
 def gather_iso20022_messages(driver: webdriver.Chrome) -> List[ISO20022BatchDownload]:
-    iso_20022_downloads: List[ISO20022BatchDownload] = list()
+    invalid_files: Dict[str, Set[ISO20022Schema]] = dict()
+    iso_20022_downloads: Dict[str, ISO20022BatchDownload] = dict()
     results_page = 0
     while True:
         page_url = build_page_url(url=ISO_MESSAGES_URL, page=results_page)
@@ -267,7 +281,7 @@ def gather_iso20022_messages(driver: webdriver.Chrome) -> List[ISO20022BatchDown
         assert catalog_areas, 'could not detect message set HTML tag'
         
         for area in catalog_areas:
-            iso_20022_messages: List[Dict[str, str]] = list()
+            iso_20022_messages: Set[Dict[str, str]] = set()
             batch_schema_download = area.find('a')
             
             assert batch_schema_download is not None, 'no download link detected'
@@ -278,22 +292,39 @@ def gather_iso20022_messages(driver: webdriver.Chrome) -> List[ISO20022BatchDown
                 **catalog_messages_attr.find_kwargs
             )
             assert area_messages, 'no message HTML elements detected'
-            
+
+            message_set_span = area.find('span')
+            assert message_set_span is not None, 'no message set detected'
+            message_set = get_element_text(message_set_span)
+            assert validate_message_set(message_set), 'invalid message set'
+
             for message in area_messages:
                 elements: ResultSet[Tag] = message.find_all('div')
                 iso_20022_message = get_message_schema(
                     message=message, elements=elements
                 )
-                iso_20022_messages.append(iso_20022_message.model_dump())
-            iso_20022_downloads.append(
-                ISO20022BatchDownload(
-                    message_set=iso_20022_message.message_set,
-                    download_link=batch_schema_download_link,
-                    messages=iso_20022_messages
-                )
+                if iso_20022_message.message_set != message_set:
+                    if iso_20022_message.message_set in iso_20022_downloads:
+                        iso_20022_downloads[iso_20022_message.message_set].messages.add(iso_20022_message)
+                    else:
+                        if iso_20022_message.message_set not in invalid_files:
+                            invalid_files[iso_20022_message.message_set] = set()
+
+                        invalid_files[iso_20022_message.message_set].add(iso_20022_message)
+                else:
+                    iso_20022_messages.add(iso_20022_message)
+
+            if message_set in invalid_files:
+                iso_20022_messages.update(invalid_files[message_set])
+                del invalid_files[message_set]
+
+            iso_20022_downloads[message_set] = ISO20022BatchDownload(
+                message_set=message_set,
+                download_link=batch_schema_download_link,
+                messages=iso_20022_messages
             )
         results_page += 1
-    return iso_20022_downloads
+    return list(iso_20022_downloads.values())
 
 
 def download_iso20022_messages(
@@ -332,8 +363,8 @@ def download_iso20022_messages(
             )
             continue
 
-        downloaded_path = os.path.join(DOWNLOAD_PATH, downloaded_filename)
-        file_extraction_path = os.path.join(
+        downloaded_path = Path(DOWNLOAD_PATH, downloaded_filename)
+        file_extraction_path = Path(
             DOWNLOAD_SAVE_PATH, 
             iso_20022_batch.message_set
         )
@@ -346,12 +377,19 @@ def download_iso20022_messages(
             except StopIteration:
                 parsing_zip_files = False
             else:
-                zip_file_path = os.path.join(file_extraction_path, zip_filename)
+                zip_file_path = file_extraction_path / zip_filename
                 extract_zipfile(zip_file_path, file_extraction_path)
-                os.remove(zip_file_path)
+                zip_file_path.unlink()
         
-        os.remove(downloaded_path)
-        
+        downloaded_path.unlink()
+
+        # Find any invalid files that are not in the correct location
+        for schema_src in file_extraction_path.iterdir():
+            message_set = message_set_from_message_id(message_id=schema_src.stem)
+            if message_set != iso_20022_batch.message_set:
+                schema_dst = file_extraction_path.with_stem(message_set) / schema_src.name
+                move_file(schema_src, schema_dst)
+
         metadata.update_metadata(batch=iso_20022_batch)
         logger.info(
             'successfully downloaded '
@@ -364,10 +402,15 @@ def download_iso20022_messages(
 if __name__ == "__main__":
     driver: webdriver.Chrome = setup_chrome_driver()
 
-    # Downloading of ISO 20022 message schemas
+    # Gather all ISO20022 message schema metadata
     messages = gather_iso20022_messages(driver=driver)
+
+    # Clear all XSD schemas that already exist in repository
+    clear_all_items_in_path(path=DOWNLOAD_SAVE_PATH)
+
+    # Download all ISO20022 message schemas
     metadata = download_iso20022_messages(driver=driver, messages=messages)
     driver.quit()
 
-    # Save ISO 20022 metadata as a JSON file
+    # Save ISO20022 metadata as a JSON file
     metadata.save_metadata_to_json()
