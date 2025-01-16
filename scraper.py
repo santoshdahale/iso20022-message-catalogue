@@ -62,9 +62,12 @@ class ISO20022Metadata:
     messages: Dict[str, list] = field(default_factory=dict)
 
     def update_metadata(self, batch: ISO20022BatchDownload) -> None:
-        self.messages[batch.message_set] = [
+        batch_messages = [
             message.model_dump() for message in batch.messages
         ]
+        self.messages[batch.message_set] = sorted(
+            batch_messages, key=lambda x: x['message_id']
+        )
         self.batches.append(batch.model_dump())
 
     def save_metadata_to_json(self) -> None:
