@@ -1617,6 +1617,18 @@
             "download_link": "https://www.iso20022.org/message/13006/download"
         },
         {
+            "message_id": "camt.064.001.01",
+            "message_name": "LimitUtilisationJournalQueryV01",
+            "submitting_organization": "4CBs and Swift",
+            "download_link": "https://www.iso20022.org/message/23165/download"
+        },
+        {
+            "message_id": "camt.065.001.01",
+            "message_name": "LimitUtilisationJournalReportV01",
+            "submitting_organization": "4CBs and Swift",
+            "download_link": "https://www.iso20022.org/message/23166/download"
+        },
+        {
             "message_id": "camt.066.001.02",
             "message_name": "lntraßalanceMovementlnstructionV02",
             "submitting_organization": "4CBs and Swift",
@@ -2905,18 +2917,6 @@
     ],
     "seev": [
         {
-            "message_id": "seev.006.001.10",
-            "message_name": "MeetingInstructionStatusV10",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22961/download"
-        },
-        {
-            "message_id": "seev.007.001.10",
-            "message_name": "MeetingVoteExecutionConfirmationV10",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22962/download"
-        },
-        {
             "message_id": "seev.008.001.09",
             "message_name": "MeetingResultDisseminationV09",
             "submitting_organization": "SWIFT",
@@ -2947,16 +2947,16 @@
             "download_link": "https://www.iso20022.org/message/15306/download"
         },
         {
+            "message_id": "seev.013.001.01",
+            "message_name": "AgentCAElectionAmendmentRequestV01",
+            "submitting_organization": "Euroclear",
+            "download_link": "https://www.iso20022.org/message/15311/download"
+        },
+        {
             "message_id": "seev.014.001.01",
             "message_name": "AgentCAElectionCancellationRequestV01",
             "submitting_organization": "Euroclear",
             "download_link": "https://www.iso20022.org/message/15316/download"
-        },
-        {
-            "message_id": "seev.015.001.01",
-            "message_name": "AgentCAElectionStatusAdviceV01",
-            "submitting_organization": "Euroclear",
-            "download_link": "https://www.iso20022.org/message/15321/download"
         },
         {
             "message_id": "seev.016.001.01",
@@ -3125,6 +3125,30 @@
             "message_name": "CorporateActionMovementPreliminaryAdviceCancellationAdvice002V12",
             "submitting_organization": "SWIFT",
             "download_link": "https://www.iso20022.org/message/22732/download"
+        },
+        {
+            "message_id": "seev.046.001.01",
+            "message_name": "ShareholdersIdentificationDisclosureRequestCancellationAdviceV01",
+            "submitting_organization": "SWIFT/SMPG",
+            "download_link": "https://www.iso20022.org/message/15966/download"
+        },
+        {
+            "message_id": "seev.047.001.03",
+            "message_name": "ShareholdersIdentificationDisclosureResponseV03",
+            "submitting_organization": "SWIFT/SMPG",
+            "download_link": "https://www.iso20022.org/message/22919/download"
+        },
+        {
+            "message_id": "seev.048.001.01",
+            "message_name": "ShareholderIdentificationDisclosureResponseCancellationAdviceV01",
+            "submitting_organization": "SWIFT/SMPG",
+            "download_link": "https://www.iso20022.org/message/15976/download"
+        },
+        {
+            "message_id": "seev.049.001.01",
+            "message_name": "ShareholderIdentificationDisclosureResponseStatusAdviceV01",
+            "submitting_organization": "SWIFT/SMPG",
+            "download_link": "https://www.iso20022.org/message/15981/download"
         },
         {
             "message_id": "seev.050.001.02",
