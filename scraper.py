@@ -69,7 +69,7 @@ class ISO20022Metadata:
         self.messages[batch.message_set] = sorted(
             batch_messages, key=lambda x: x["message_id"]
         )
-        self.batches.append({})
+        self.batches.append(batch.to_set_json())
 
     def save_metadata_to_json(self) -> None:
         for metadata, filename in [
@@ -226,7 +226,7 @@ def get_message_fields(elements: ResultSet[Tag]) -> List[str]:
     return message_fields
 
 
-def retry_wrapper(errors: Tuple[Exception]):
+def retry_wrapper(errors: Tuple[Exception, ...]):
     def outer(func):
         @functools.wraps(func)
         def inner(*args, **kwargs) -> bool:
@@ -437,4 +437,4 @@ if __name__ == "__main__":
     driver.quit()
 
     # Save ISO20022 metadata as a JSON file
-    # metadata.save_metadata_to_json()
+    metadata.save_metadata_to_json()
