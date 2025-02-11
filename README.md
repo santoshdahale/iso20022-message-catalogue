@@ -7,7 +7,7 @@ A lightweight Python script that automatically downloads and tracks ISO20022 mes
 - Downloads all available ISO20022 XSD schemas daily.
 - Generates and updates a JSON file containing metadata for each schema.
 - Provides detailed information about each schema, including its identifier, name, submitting organization and download link.
-- Provides basic information about each set, including its abbreviation and download link (for batch download).
+- Provides basic information about each set, including its abbreviation and number of messages within set.
 - Includes a GitHub Action that runs the downloader daily at midnight, ensuring the repository stays current.
 
 ## Repository Structure
@@ -49,7 +49,7 @@ Here’s an example entry from `iso20022_sets.json`:
 ```json
 {
     "message_set": "acmt",
-    "download_link": "https://www.iso20022.org/business-area/26/download"
+    "num_messages": 34
 }
 ```
 
