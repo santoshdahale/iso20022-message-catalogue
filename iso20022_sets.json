@@ -1,126 +1,126 @@
 [
     {
         "message_set": "acmt",
-        "download_link": "https://www.iso20022.org/business-area/26/download"
+        "num_messages": 34
     },
     {
         "message_set": "admi",
-        "download_link": "https://www.iso20022.org/business-area/31/download"
+        "num_messages": 10
     },
     {
         "message_set": "auth",
-        "download_link": "https://www.iso20022.org/business-area/36/download"
+        "num_messages": 84
     },
     {
         "message_set": "caaa",
-        "download_link": "https://www.iso20022.org/business-area/41/download"
+        "num_messages": 27
     },
     {
         "message_set": "caad",
-        "download_link": "https://www.iso20022.org/business-area/351/download"
+        "num_messages": 10
     },
     {
         "message_set": "caam",
-        "download_link": "https://www.iso20022.org/business-area/46/download"
+        "num_messages": 12
     },
     {
         "message_set": "cafc",
-        "download_link": "https://www.iso20022.org/business-area/356/download"
+        "num_messages": 2
     },
     {
         "message_set": "cafm",
-        "download_link": "https://www.iso20022.org/business-area/361/download"
+        "num_messages": 2
     },
     {
         "message_set": "cafr",
-        "download_link": "https://www.iso20022.org/business-area/366/download"
+        "num_messages": 4
     },
     {
         "message_set": "cain",
-        "download_link": "https://www.iso20022.org/business-area/311/download"
+        "num_messages": 21
     },
     {
         "message_set": "camt",
-        "download_link": "https://www.iso20022.org/business-area/51/download"
+        "num_messages": 94
     },
     {
         "message_set": "canm",
-        "download_link": "https://www.iso20022.org/business-area/371/download"
+        "num_messages": 4
     },
     {
         "message_set": "casp",
-        "download_link": "https://www.iso20022.org/business-area/206/download"
+        "num_messages": 17
     },
     {
         "message_set": "casr",
-        "download_link": "https://www.iso20022.org/business-area/376/download"
+        "num_messages": 2
     },
     {
         "message_set": "catm",
-        "download_link": "https://www.iso20022.org/business-area/56/download"
+        "num_messages": 8
     },
     {
         "message_set": "catp",
-        "download_link": "https://www.iso20022.org/business-area/61/download"
+        "num_messages": 17
     },
     {
         "message_set": "colr",
-        "download_link": "https://www.iso20022.org/business-area/66/download"
+        "num_messages": 22
     },
     {
         "message_set": "fxtr",
-        "download_link": "https://www.iso20022.org/business-area/71/download"
+        "num_messages": 15
     },
     {
         "message_set": "head",
-        "download_link": "https://www.iso20022.org/business-area/136/download"
+        "num_messages": 3
     },
     {
         "message_set": "pacs",
-        "download_link": "https://www.iso20022.org/business-area/76/download"
+        "num_messages": 10
     },
     {
         "message_set": "pain",
-        "download_link": "https://www.iso20022.org/business-area/81/download"
+        "num_messages": 12
     },
     {
         "message_set": "reda",
-        "download_link": "https://www.iso20022.org/business-area/86/download"
+        "num_messages": 56
     },
     {
         "message_set": "remt",
-        "download_link": "https://www.iso20022.org/business-area/91/download"
+        "num_messages": 2
     },
     {
         "message_set": "secl",
-        "download_link": "https://www.iso20022.org/business-area/96/download"
+        "num_messages": 10
     },
     {
         "message_set": "seev",
-        "download_link": "https://www.iso20022.org/business-area/101/download"
+        "num_messages": 65
     },
     {
         "message_set": "semt",
-        "download_link": "https://www.iso20022.org/business-area/106/download"
+        "num_messages": 36
     },
     {
         "message_set": "sese",
-        "download_link": "https://www.iso20022.org/business-area/111/download"
+        "num_messages": 59
     },
     {
         "message_set": "setr",
-        "download_link": "https://www.iso20022.org/business-area/116/download"
+        "num_messages": 34
     },
     {
         "message_set": "tsin",
-        "download_link": "https://www.iso20022.org/business-area/121/download"
+        "num_messages": 12
     },
     {
         "message_set": "tsmt",
-        "download_link": "https://www.iso20022.org/business-area/126/download"
+        "num_messages": 52
     },
     {
         "message_set": "tsrv",
-        "download_link": "https://www.iso20022.org/business-area/131/download"
+        "num_messages": 19
     }
 ]
