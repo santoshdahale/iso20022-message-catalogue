@@ -1545,22 +1545,22 @@
             "download_link": "https://www.iso20022.org/message/23053/download"
         },
         {
-            "message_id": "camt.052.001.12",
-            "message_name": "BankToCustomerAccountReportV12",
+            "message_id": "camt.052.001.13",
+            "message_name": "BankToCustomerAccountReportV13",
             "submitting_organization": "ISTH",
-            "download_link": "https://www.iso20022.org/message/22857/download"
+            "download_link": "https://www.iso20022.org/message/23167/download"
         },
         {
-            "message_id": "camt.053.001.12",
-            "message_name": "BankToCustomerStatementV12",
+            "message_id": "camt.053.001.13",
+            "message_name": "BankToCustomerStatementV13",
             "submitting_organization": "ISTH",
-            "download_link": "https://www.iso20022.org/message/22858/download"
+            "download_link": "https://www.iso20022.org/message/23168/download"
         },
         {
-            "message_id": "camt.054.001.12",
-            "message_name": "BankToCustomerDebitCreditNotificationV12",
+            "message_id": "camt.054.001.13",
+            "message_name": "BankToCustomerDebitCreditNotificationV13",
             "submitting_organization": "ISTH",
-            "download_link": "https://www.iso20022.org/message/22859/download"
+            "download_link": "https://www.iso20022.org/message/23169/download"
         },
         {
             "message_id": "camt.055.001.12",
@@ -3869,16 +3869,16 @@
             "download_link": "https://www.iso20022.org/message/22596/download"
         },
         {
-            "message_id": "sese.041.001.01",
-            "message_name": "BuyInRegulatoryAdviceV01",
-            "submitting_organization": "KDPW/SWIFT",
-            "download_link": "https://www.iso20022.org/message/21221/download"
+            "message_id": "sese.041.001.02",
+            "message_name": "BuyInRegulatoryAdviceV02",
+            "submitting_organization": "SWIFT",
+            "download_link": "https://www.iso20022.org/message/23172/download"
         },
         {
-            "message_id": "sese.042.001.01",
-            "message_name": "BuyInRegulatoryAdviceResponseV01",
-            "submitting_organization": "KDPW/SWIFT",
-            "download_link": "https://www.iso20022.org/message/21226/download"
+            "message_id": "sese.042.001.02",
+            "message_name": "BuyInRegulatoryAdviceResponseV02",
+            "submitting_organization": "SWIFT",
+            "download_link": "https://www.iso20022.org/message/23171/download"
         }
     ],
     "setr": [
