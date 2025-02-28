@@ -3097,10 +3097,10 @@
             "download_link": "https://www.iso20022.org/message/23183/download"
         },
         {
-            "message_id": "seev.031.002.14",
-            "message_name": "CorporateActionNotification002V14",
+            "message_id": "seev.031.002.15",
+            "message_name": "CorporateActionNotification002V15",
             "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22894/download"
+            "download_link": "https://www.iso20022.org/message/23206/download"
         },
         {
             "message_id": "seev.032.001.09",
@@ -3109,10 +3109,10 @@
             "download_link": "https://www.iso20022.org/message/23184/download"
         },
         {
-            "message_id": "seev.032.002.08",
-            "message_name": "CorporateActionEventProcessingStatusAdvice002V08",
+            "message_id": "seev.032.002.09",
+            "message_name": "CorporateActionEventProcessingStatusAdvice002V09",
             "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/21711/download"
+            "download_link": "https://www.iso20022.org/message/23207/download"
         },
         {
             "message_id": "seev.033.001.13",
@@ -3121,10 +3121,10 @@
             "download_link": "https://www.iso20022.org/message/23185/download"
         },
         {
-            "message_id": "seev.033.002.12",
-            "message_name": "CorporateActionInstruction002V12",
+            "message_id": "seev.033.002.13",
+            "message_name": "CorporateActionInstruction002V13",
             "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22485/download"
+            "download_link": "https://www.iso20022.org/message/23208/download"
         },
         {
             "message_id": "seev.034.001.15",
@@ -3133,10 +3133,10 @@
             "download_link": "https://www.iso20022.org/message/23186/download"
         },
         {
-            "message_id": "seev.034.002.14",
-            "message_name": "CorporateActionInstructionStatusAdvice002V14",
+            "message_id": "seev.034.002.15",
+            "message_name": "CorporateActionInstructionStatusAdvice002V15",
             "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22895/download"
+            "download_link": "https://www.iso20022.org/message/23209/download"
         },
         {
             "message_id": "seev.035.001.16",
@@ -3145,10 +3145,10 @@
             "download_link": "https://www.iso20022.org/message/23187/download"
         },
         {
-            "message_id": "seev.035.002.15",
-            "message_name": "CorporateActionMovementPreliminaryAdvice002V15",
+            "message_id": "seev.035.002.16",
+            "message_name": "CorporateActionMovementPreliminaryAdvice002V16",
             "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22896/download"
+            "download_link": "https://www.iso20022.org/message/23210/download"
         },
         {
             "message_id": "seev.036.001.16",
@@ -3157,10 +3157,10 @@
             "download_link": "https://www.iso20022.org/message/23188/download"
         },
         {
-            "message_id": "seev.036.002.15",
-            "message_name": "CorporateActionMovementConfirmation002V15",
+            "message_id": "seev.036.002.16",
+            "message_name": "CorporateActionMovementConfirmation002V16",
             "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22897/download"
+            "download_link": "https://www.iso20022.org/message/23211/download"
         },
         {
             "message_id": "seev.037.001.16",
@@ -3169,10 +3169,10 @@
             "download_link": "https://www.iso20022.org/message/23189/download"
         },
         {
-            "message_id": "seev.037.002.15",
-            "message_name": "CorporateActionMovementReversalAdvice002V15",
+            "message_id": "seev.037.002.16",
+            "message_name": "CorporateActionMovementReversalAdvice002V16",
             "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22898/download"
+            "download_link": "https://www.iso20022.org/message/23212/download"
         },
         {
             "message_id": "seev.038.001.09",
@@ -3181,10 +3181,10 @@
             "download_link": "https://www.iso20022.org/message/23190/download"
         },
         {
-            "message_id": "seev.038.002.08",
-            "message_name": "CorporateActionNarrative002V08",
+            "message_id": "seev.038.002.09",
+            "message_name": "CorporateActionNarrative002V09",
             "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22899/download"
+            "download_link": "https://www.iso20022.org/message/23213/download"
         },
         {
             "message_id": "seev.039.001.13",
@@ -3193,10 +3193,10 @@
             "download_link": "https://www.iso20022.org/message/23191/download"
         },
         {
-            "message_id": "seev.039.002.12",
-            "message_name": "CorporateActionCancellationAdvice002V12",
+            "message_id": "seev.039.002.13",
+            "message_name": "CorporateActionCancellationAdvice002V13",
             "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22729/download"
+            "download_link": "https://www.iso20022.org/message/23214/download"
         },
         {
             "message_id": "seev.040.001.13",
@@ -3205,10 +3205,10 @@
             "download_link": "https://www.iso20022.org/message/23192/download"
         },
         {
-            "message_id": "seev.040.002.12",
-            "message_name": "CorporateActionInstructionCancellationRequest002V12",
+            "message_id": "seev.040.002.13",
+            "message_name": "CorporateActionInstructionCancellationRequest002V13",
             "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22730/download"
+            "download_link": "https://www.iso20022.org/message/23215/download"
         },
         {
             "message_id": "seev.041.001.14",
@@ -3217,10 +3217,10 @@
             "download_link": "https://www.iso20022.org/message/23193/download"
         },
         {
-            "message_id": "seev.041.002.13",
-            "message_name": "CorporateActionInstructionCancellationRequestStatusAdvice002V13",
+            "message_id": "seev.041.002.14",
+            "message_name": "CorporateActionInstructionCancellationRequestStatusAdvice002V14",
             "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22731/download"
+            "download_link": "https://www.iso20022.org/message/23216/download"
         },
         {
             "message_id": "seev.042.001.13",
@@ -3229,10 +3229,10 @@
             "download_link": "https://www.iso20022.org/message/23194/download"
         },
         {
-            "message_id": "seev.042.002.12",
-            "message_name": "CorporateActionInstructionStatementReport002V12",
+            "message_id": "seev.042.002.13",
+            "message_name": "CorporateActionInstructionStatementReport002V13",
             "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22900/download"
+            "download_link": "https://www.iso20022.org/message/23217/download"
         },
         {
             "message_id": "seev.044.001.13",
@@ -3241,10 +3241,10 @@
             "download_link": "https://www.iso20022.org/message/23195/download"
         },
         {
-            "message_id": "seev.044.002.12",
-            "message_name": "CorporateActionMovementPreliminaryAdviceCancellationAdvice002V12",
+            "message_id": "seev.044.002.13",
+            "message_name": "CorporateActionMovementPreliminaryAdviceCancellationAdvice002V13",
             "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22732/download"
+            "download_link": "https://www.iso20022.org/message/23218/download"
         },
         {
             "message_id": "seev.045.001.04",
