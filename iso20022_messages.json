@@ -1383,10 +1383,10 @@
             "download_link": "https://www.iso20022.org/message/23046/download"
         },
         {
-            "message_id": "camt.025.001.08",
-            "message_name": "ReceiptV08",
+            "message_id": "camt.025.001.09",
+            "message_name": "ReceiptV09",
             "submitting_organization": "Swift",
-            "download_link": "https://www.iso20022.org/message/23105/download"
+            "download_link": "https://www.iso20022.org/message/23170/download"
         },
         {
             "message_id": "camt.026.001.10",
@@ -2297,46 +2297,46 @@
             "download_link": "https://www.iso20022.org/message/22754/download"
         },
         {
-            "message_id": "fxtr.031.001.01",
-            "message_name": "ForeignExchangeTradeCaptureReportV01",
+            "message_id": "fxtr.031.001.02",
+            "message_name": "ForeignExchangeTradeCaptureReportV02",
             "submitting_organization": "CFETS",
-            "download_link": "https://www.iso20022.org/message/13976/download"
+            "download_link": "https://www.iso20022.org/message/23174/download"
         },
         {
-            "message_id": "fxtr.032.001.01",
-            "message_name": "ForeignExchangeTradeCaptureReportRequestV01",
+            "message_id": "fxtr.032.001.02",
+            "message_name": "ForeignExchangeTradeCaptureReportRequestV02",
             "submitting_organization": "CFETS",
-            "download_link": "https://www.iso20022.org/message/13981/download"
+            "download_link": "https://www.iso20022.org/message/23175/download"
         },
         {
-            "message_id": "fxtr.033.001.01",
-            "message_name": "ForeignExchangeTradeCaptureReportAcknowledgementV01",
+            "message_id": "fxtr.033.001.02",
+            "message_name": "ForeignExchangeTradeCaptureReportAcknowledgementV02",
             "submitting_organization": "CFETS",
-            "download_link": "https://www.iso20022.org/message/13986/download"
+            "download_link": "https://www.iso20022.org/message/23176/download"
         },
         {
-            "message_id": "fxtr.034.001.01",
-            "message_name": "ForeignExchangeTradeConfirmationRequestV01",
+            "message_id": "fxtr.034.001.02",
+            "message_name": "ForeignExchangeTradeConfirmationRequestV02",
             "submitting_organization": "CFETS",
-            "download_link": "https://www.iso20022.org/message/13991/download"
+            "download_link": "https://www.iso20022.org/message/23177/download"
         },
         {
-            "message_id": "fxtr.035.001.01",
-            "message_name": "ForeignExchangeTradeConfirmationRequestAmendmentRequestV01",
+            "message_id": "fxtr.035.001.02",
+            "message_name": "ForeignExchangeTradeConfirmationRequestAmendmentRequestV02",
             "submitting_organization": "CFETS",
-            "download_link": "https://www.iso20022.org/message/13996/download"
+            "download_link": "https://www.iso20022.org/message/23178/download"
         },
         {
-            "message_id": "fxtr.036.001.01",
-            "message_name": "ForeignExchangeTradeConfirmationRequestCancellationRequestV01",
+            "message_id": "fxtr.036.001.02",
+            "message_name": "ForeignExchangeTradeConfirmationRequestCancellationRequestV02",
             "submitting_organization": "CFETS",
-            "download_link": "https://www.iso20022.org/message/14001/download"
+            "download_link": "https://www.iso20022.org/message/23179/download"
         },
         {
-            "message_id": "fxtr.037.001.01",
-            "message_name": "ForeignExchangeTradeConfirmationStatusAdviceV01",
+            "message_id": "fxtr.037.001.02",
+            "message_name": "ForeignExchangeTradeConfirmationStatusAdviceV02",
             "submitting_organization": "CFETS",
-            "download_link": "https://www.iso20022.org/message/14006/download"
+            "download_link": "https://www.iso20022.org/message/23180/download"
         }
     ],
     "head": [
@@ -2367,10 +2367,10 @@
             "download_link": "https://www.iso20022.org/message/22116/download"
         },
         {
-            "message_id": "pacs.002.001.14",
-            "message_name": "FIToFIPaymentStatusReportV14",
+            "message_id": "pacs.002.001.15",
+            "message_name": "FIToFIPaymentStatusReportV15",
             "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22901/download"
+            "download_link": "https://www.iso20022.org/message/23227/download"
         },
         {
             "message_id": "pacs.003.001.11",
@@ -2379,10 +2379,10 @@
             "download_link": "https://www.iso20022.org/message/22902/download"
         },
         {
-            "message_id": "pacs.004.001.13",
-            "message_name": "PaymentReturnV13",
+            "message_id": "pacs.004.001.14",
+            "message_name": "PaymentReturnV14",
             "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22903/download"
+            "download_link": "https://www.iso20022.org/message/23228/download"
         },
         {
             "message_id": "pacs.007.001.13",
@@ -2391,16 +2391,16 @@
             "download_link": "https://www.iso20022.org/message/22904/download"
         },
         {
-            "message_id": "pacs.008.001.12",
-            "message_name": "FIToFICustomerCreditTransferV12",
+            "message_id": "pacs.008.001.13",
+            "message_name": "FIToFICustomerCreditTransferV13",
             "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22905/download"
+            "download_link": "https://www.iso20022.org/message/23229/download"
         },
         {
-            "message_id": "pacs.009.001.11",
-            "message_name": "FinancialInstitutionCreditTransferV11",
+            "message_id": "pacs.009.001.12",
+            "message_name": "FinancialInstitutionCreditTransferV12",
             "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22906/download"
+            "download_link": "https://www.iso20022.org/message/23230/download"
         },
         {
             "message_id": "pacs.010.001.06",
@@ -3277,28 +3277,28 @@
             "download_link": "https://www.iso20022.org/message/15981/download"
         },
         {
-            "message_id": "seev.050.001.02",
-            "message_name": "MarketClaimCreationV02",
+            "message_id": "seev.050.001.03",
+            "message_name": "MarketClaimCreationV03",
             "submitting_organization": "SWIFT/SMPG",
-            "download_link": "https://www.iso20022.org/message/22935/download"
+            "download_link": "https://www.iso20022.org/message/23220/download"
         },
         {
-            "message_id": "seev.052.001.02",
-            "message_name": "MarketClaimStatusAdviceV02",
+            "message_id": "seev.051.001.02",
+            "message_name": "MarketClaimCancellationRequestV02",
             "submitting_organization": "SWIFT/SMPG",
-            "download_link": "https://www.iso20022.org/message/22936/download"
+            "download_link": "https://www.iso20022.org/message/23221/download"
         },
         {
-            "message_id": "seev.053.001.01",
-            "message_name": "MarketClaimCancellationRequestStatusAdviceV01",
+            "message_id": "seev.052.001.03",
+            "message_name": "MarketClaimStatusAdviceV03",
             "submitting_organization": "SWIFT/SMPG",
-            "download_link": "https://www.iso20022.org/message/21701/download"
+            "download_link": "https://www.iso20022.org/message/23225/download"
         },
         {
-            "message_id": "seev.053.001.02",
-            "message_name": "MarketClaimCancellationRequestStatusAdviceV02",
+            "message_id": "seev.053.001.03",
+            "message_name": "MarketClaimCancellationRequestStatusAdviceV03",
             "submitting_organization": "SWIFT/SMPG",
-            "download_link": "https://www.iso20022.org/message/22937/download"
+            "download_link": "https://www.iso20022.org/message/23226/download"
         }
     ],
     "semt": [
@@ -3316,15 +3316,15 @@
         },
         {
             "message_id": "semt.002.001.02",
-            "message_name": "CustodyStatementOfHoldingsV02",
+            "message_name": "SecuritiesBalanceCustodyReportV02",
             "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/21161/download"
+            "download_link": "https://www.iso20022.org/message/16006/download"
         },
         {
-            "message_id": "semt.002.001.11",
-            "message_name": "SecuritiesBalanceCustodyReportV11",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22517/download"
+            "message_id": "semt.002.001.12",
+            "message_name": "SecuritiesBalanceCustodyReportV12",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23231/download"
         },
         {
             "message_id": "semt.002.002.11",
@@ -3334,15 +3334,15 @@
         },
         {
             "message_id": "semt.003.001.02",
-            "message_name": "AccountingStatementOfHoldingsV02",
+            "message_name": "SecuritiesBalanceAccountingReportV02",
             "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/21166/download"
+            "download_link": "https://www.iso20022.org/message/16056/download"
         },
         {
-            "message_id": "semt.003.001.11",
-            "message_name": "SecuritiesBalanceAccountingReportV11",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22532/download"
+            "message_id": "semt.003.001.12",
+            "message_name": "SecuritiesBalanceAccountingReportV12",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23232/download"
         },
         {
             "message_id": "semt.003.002.11",
@@ -3358,9 +3358,9 @@
         },
         {
             "message_id": "semt.005.001.02",
-            "message_name": "AccountingStatementOfHoldingsCancellationV02",
+            "message_name": "AccountingStatementOfHoldingsCancellationV01",
             "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/16116/download"
+            "download_link": "https://www.iso20022.org/message/16111/download"
         },
         {
             "message_id": "semt.006.001.03",
@@ -3375,10 +3375,10 @@
             "download_link": "https://www.iso20022.org/message/16146/download"
         },
         {
-            "message_id": "semt.013.001.06",
-            "message_name": "IntraPositionMovementInstructionV06",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22533/download"
+            "message_id": "semt.013.001.07",
+            "message_name": "IntraPositionMovementInstructionV07",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23233/download"
         },
         {
             "message_id": "semt.013.002.06",
@@ -3387,10 +3387,10 @@
             "download_link": "https://www.iso20022.org/message/22566/download"
         },
         {
-            "message_id": "semt.014.001.07",
-            "message_name": "IntraPositionMovementStatusAdviceV07",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22534/download"
+            "message_id": "semt.014.001.08",
+            "message_name": "IntraPositionMovementStatusAdviceV08",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23234/download"
         },
         {
             "message_id": "semt.014.002.07",
@@ -3399,10 +3399,10 @@
             "download_link": "https://www.iso20022.org/message/22567/download"
         },
         {
-            "message_id": "semt.015.001.09",
-            "message_name": "IntraPositionMovementConfirmationV09",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22535/download"
+            "message_id": "semt.015.001.10",
+            "message_name": "IntraPositionMovementConfirmationV10",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23235/download"
         },
         {
             "message_id": "semt.015.002.09",
@@ -3411,10 +3411,10 @@
             "download_link": "https://www.iso20022.org/message/22568/download"
         },
         {
-            "message_id": "semt.016.001.09",
-            "message_name": "IntraPositionMovementPostingReportV09",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22536/download"
+            "message_id": "semt.016.001.10",
+            "message_name": "IntraPositionMovementPostingReportV10",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23236/download"
         },
         {
             "message_id": "semt.016.002.09",
@@ -3423,10 +3423,10 @@
             "download_link": "https://www.iso20022.org/message/22569/download"
         },
         {
-            "message_id": "semt.017.001.12",
-            "message_name": "SecuritiesTransactionPostingReportV12",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22537/download"
+            "message_id": "semt.017.001.13",
+            "message_name": "SecuritiesTransactionPostingReportV13",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23237/download"
         },
         {
             "message_id": "semt.017.002.12",
@@ -3435,10 +3435,10 @@
             "download_link": "https://www.iso20022.org/message/22570/download"
         },
         {
-            "message_id": "semt.018.001.13",
-            "message_name": "SecuritiesTransactionPendingReportV13",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22538/download"
+            "message_id": "semt.018.001.14",
+            "message_name": "SecuritiesTransactionPendingReportV14",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23238/download"
         },
         {
             "message_id": "semt.018.002.13",
@@ -3447,10 +3447,10 @@
             "download_link": "https://www.iso20022.org/message/22571/download"
         },
         {
-            "message_id": "semt.019.001.10",
-            "message_name": "SecuritiesSettlementTransactionAllegementReportV10",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22539/download"
+            "message_id": "semt.019.001.11",
+            "message_name": "SecuritiesSettlementTransactionAllegementReportV11",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23239/download"
         },
         {
             "message_id": "semt.019.002.10",
@@ -3483,10 +3483,10 @@
             "download_link": "https://www.iso20022.org/message/22574/download"
         },
         {
-            "message_id": "semt.022.001.05",
-            "message_name": "SecuritiesSettlementTransactionAuditTrailReportV05",
-            "submitting_organization": "Deutsche Bundesbank (on behalf of 4CB) and SWIFT",
-            "download_link": "https://www.iso20022.org/message/22542/download"
+            "message_id": "semt.022.001.06",
+            "message_name": "SecuritiesSettlementTransactionAuditTrailReportV06",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23240/download"
         },
         {
             "message_id": "semt.022.002.05",
@@ -3605,16 +3605,22 @@
             "download_link": "https://www.iso20022.org/message/17051/download"
         },
         {
+            "message_id": "sese.018.001.09",
+            "message_name": "AccountHoldingInformationV09",
+            "submitting_organization": "SWIFT",
+            "download_link": "https://www.iso20022.org/message/22530/download"
+        },
+        {
             "message_id": "sese.019.001.08",
             "message_name": "AccountHoldingInformationRequestV08",
             "submitting_organization": "SWIFT",
             "download_link": "https://www.iso20022.org/message/22531/download"
         },
         {
-            "message_id": "sese.020.001.07",
-            "message_name": "SecuritiesTransactionCancellationRequestV07",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22543/download"
+            "message_id": "sese.020.001.08",
+            "message_name": "SecuritiesTransactionCancellationRequestV08",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23241/download"
         },
         {
             "message_id": "sese.020.002.07",
@@ -3623,10 +3629,10 @@
             "download_link": "https://www.iso20022.org/message/22576/download"
         },
         {
-            "message_id": "sese.021.001.06",
-            "message_name": "SecuritiesTransactionStatusQueryV06",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22544/download"
+            "message_id": "sese.021.001.07",
+            "message_name": "SecuritiesTransactionStatusQueryV07",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23242/download"
         },
         {
             "message_id": "sese.021.002.06",
@@ -3635,10 +3641,10 @@
             "download_link": "https://www.iso20022.org/message/22577/download"
         },
         {
-            "message_id": "sese.022.001.06",
-            "message_name": "SecuritiesStatusOrStatementQueryStatusAdviceV06",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22545/download"
+            "message_id": "sese.022.001.07",
+            "message_name": "SecuritiesStatusOrStatementQueryStatusAdviceV07",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23243/download"
         },
         {
             "message_id": "sese.022.002.06",
@@ -3647,10 +3653,10 @@
             "download_link": "https://www.iso20022.org/message/22578/download"
         },
         {
-            "message_id": "sese.023.001.11",
-            "message_name": "SecuritiesSettlementTransactionInstructionV11",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22546/download"
+            "message_id": "sese.023.001.12",
+            "message_name": "SecuritiesSettlementTransactionInstructionV12",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23244/download"
         },
         {
             "message_id": "sese.023.002.11",
@@ -3659,10 +3665,10 @@
             "download_link": "https://www.iso20022.org/message/22579/download"
         },
         {
-            "message_id": "sese.024.001.12",
-            "message_name": "SecuritiesSettlementTransactionStatusAdviceV12",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22547/download"
+            "message_id": "sese.024.001.13",
+            "message_name": "SecuritiesSettlementTransactionStatusAdviceV13",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23245/download"
         },
         {
             "message_id": "sese.024.002.12",
@@ -3671,10 +3677,10 @@
             "download_link": "https://www.iso20022.org/message/22580/download"
         },
         {
-            "message_id": "sese.025.001.11",
-            "message_name": "SecuritiesSettlementTransactionConfirmationV11",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22548/download"
+            "message_id": "sese.025.001.12",
+            "message_name": "SecuritiesSettlementTransactionConfirmationV12",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23246/download"
         },
         {
             "message_id": "sese.025.002.11",
@@ -3683,10 +3689,10 @@
             "download_link": "https://www.iso20022.org/message/22581/download"
         },
         {
-            "message_id": "sese.026.001.10",
-            "message_name": "SecuritiesSettlementTransactionReversalAdviceV10",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22549/download"
+            "message_id": "sese.026.001.11",
+            "message_name": "SecuritiesSettlementTransactionReversalAdviceV11",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23247/download"
         },
         {
             "message_id": "sese.026.002.10",
@@ -3695,10 +3701,10 @@
             "download_link": "https://www.iso20022.org/message/22582/download"
         },
         {
-            "message_id": "sese.027.001.07",
-            "message_name": "SecuritiesTransactionCancellationRequestStatusAdviceV07",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22550/download"
+            "message_id": "sese.027.001.08",
+            "message_name": "SecuritiesTransactionCancellationRequestStatusAdviceV08",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23248/download"
         },
         {
             "message_id": "sese.027.002.07",
@@ -3707,10 +3713,10 @@
             "download_link": "https://www.iso20022.org/message/22583/download"
         },
         {
-            "message_id": "sese.028.001.10",
-            "message_name": "SecuritiesSettlementTransactionAllegementNotificationV10",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22551/download"
+            "message_id": "sese.028.001.11",
+            "message_name": "SecuritiesSettlementTransactionAllegementNotificationV11",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23249/download"
         },
         {
             "message_id": "sese.028.002.10",
@@ -3719,10 +3725,10 @@
             "download_link": "https://www.iso20022.org/message/22584/download"
         },
         {
-            "message_id": "sese.029.001.06",
-            "message_name": "SecuritiesSettlementAllegementRemovalAdviceV06",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22552/download"
+            "message_id": "sese.029.001.07",
+            "message_name": "SecuritiesSettlementAllegementRemovalAdviceV07",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23250/download"
         },
         {
             "message_id": "sese.029.002.06",
@@ -3731,10 +3737,10 @@
             "download_link": "https://www.iso20022.org/message/22585/download"
         },
         {
-            "message_id": "sese.030.001.09",
-            "message_name": "SecuritiesSettlementConditionsModificationRequestV09",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22553/download"
+            "message_id": "sese.030.001.10",
+            "message_name": "SecuritiesSettlementConditionsModificationRequestV10",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23251/download"
         },
         {
             "message_id": "sese.030.002.09",
@@ -3743,10 +3749,10 @@
             "download_link": "https://www.iso20022.org/message/22586/download"
         },
         {
-            "message_id": "sese.031.001.09",
-            "message_name": "SecuritiesSettlementConditionModificationStatusAdviceV09",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22554/download"
+            "message_id": "sese.031.001.10",
+            "message_name": "SecuritiesSettlementConditionModificationStatusAdviceV10",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23252/download"
         },
         {
             "message_id": "sese.031.002.09",
@@ -3755,10 +3761,10 @@
             "download_link": "https://www.iso20022.org/message/22587/download"
         },
         {
-            "message_id": "sese.032.001.11",
-            "message_name": "SecuritiesSettlementTransactionGenerationNotificationV11",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22555/download"
+            "message_id": "sese.032.001.12",
+            "message_name": "SecuritiesSettlementTransactionGenerationNotificationV12",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23253/download"
         },
         {
             "message_id": "sese.032.002.11",
@@ -3767,10 +3773,10 @@
             "download_link": "https://www.iso20022.org/message/22588/download"
         },
         {
-            "message_id": "sese.033.001.11",
-            "message_name": "SecuritiesFinancingInstructionV11",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22556/download"
+            "message_id": "sese.033.001.12",
+            "message_name": "SecuritiesFinancingInstructionV12",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23254/download"
         },
         {
             "message_id": "sese.033.002.11",
@@ -3779,10 +3785,10 @@
             "download_link": "https://www.iso20022.org/message/22589/download"
         },
         {
-            "message_id": "sese.034.001.09",
-            "message_name": "SecuritiesFinancingStatusAdviceV09",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22557/download"
+            "message_id": "sese.034.001.10",
+            "message_name": "SecuritiesFinancingStatusAdviceV10",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23255/download"
         },
         {
             "message_id": "sese.034.002.09",
@@ -3791,10 +3797,10 @@
             "download_link": "https://www.iso20022.org/message/22590/download"
         },
         {
-            "message_id": "sese.035.001.11",
-            "message_name": "SecuritiesFinancingConfirmationV11",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22558/download"
+            "message_id": "sese.035.001.12",
+            "message_name": "SecuritiesFinancingConfirmationV12",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23256/download"
         },
         {
             "message_id": "sese.035.002.11",
@@ -3803,10 +3809,10 @@
             "download_link": "https://www.iso20022.org/message/22591/download"
         },
         {
-            "message_id": "sese.036.001.08",
-            "message_name": "SecuritiesFinancingModificationInstructionV08",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22559/download"
+            "message_id": "sese.036.001.09",
+            "message_name": "SecuritiesFinancingModificationInstructionV09",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23257/download"
         },
         {
             "message_id": "sese.036.002.08",
@@ -3815,10 +3821,10 @@
             "download_link": "https://www.iso20022.org/message/22592/download"
         },
         {
-            "message_id": "sese.037.001.07",
-            "message_name": "PortfolioTransferNotificationV07",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22560/download"
+            "message_id": "sese.037.001.08",
+            "message_name": "PortfolioTransferNotificationV08",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23258/download"
         },
         {
             "message_id": "sese.037.002.07",
@@ -3827,10 +3833,10 @@
             "download_link": "https://www.iso20022.org/message/22593/download"
         },
         {
-            "message_id": "sese.038.001.09",
-            "message_name": "SecuritiesSettlementTransactionModificationRequestV09",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22561/download"
+            "message_id": "sese.038.001.10",
+            "message_name": "SecuritiesSettlementTransactionModificationRequestV10",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23259/download"
         },
         {
             "message_id": "sese.038.002.09",
@@ -3839,10 +3845,10 @@
             "download_link": "https://www.iso20022.org/message/22594/download"
         },
         {
-            "message_id": "sese.039.001.06",
-            "message_name": "SecuritiesSettlementTransactionModificationRequestStatusAdviceV06",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22562/download"
+            "message_id": "sese.039.001.07",
+            "message_name": "SecuritiesSettlementTransactionModificationRequestStatusAdviceV07",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23260/download"
         },
         {
             "message_id": "sese.039.002.06",
@@ -3851,10 +3857,10 @@
             "download_link": "https://www.iso20022.org/message/22595/download"
         },
         {
-            "message_id": "sese.040.001.04",
-            "message_name": "SecuritiesSettlementTransactionCounterpartyResponseV04",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/22563/download"
+            "message_id": "sese.040.001.05",
+            "message_name": "SecuritiesSettlementTransactionCounterpartyResponseV05",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23261/download"
         },
         {
             "message_id": "sese.040.002.04",
@@ -3873,6 +3879,12 @@
             "message_name": "BuyInRegulatoryAdviceResponseV02",
             "submitting_organization": "SWIFT",
             "download_link": "https://www.iso20022.org/message/23171/download"
+        },
+        {
+            "message_id": "sese.043.001.01",
+            "message_name": "PortfolioTransferCompletionV01",
+            "submitting_organization": "SWIFT",
+            "download_link": "https://www.iso20022.org/message/23205/download"
         }
     ],
     "setr": [
@@ -3985,10 +3997,10 @@
             "download_link": "https://www.iso20022.org/message/18201/download"
         },
         {
-            "message_id": "setr.027.001.04",
-            "message_name": "SecuritiesTradeConfirmationV04",
+            "message_id": "setr.027.001.05",
+            "message_name": "SecuritiesTradeConfirmationV05",
             "submitting_organization": "Omgeo/SWIFT",
-            "download_link": "https://www.iso20022.org/message/22699/download"
+            "download_link": "https://www.iso20022.org/message/23224/download"
         },
         {
             "message_id": "setr.029.001.02",
@@ -3997,16 +4009,16 @@
             "download_link": "https://www.iso20022.org/message/22703/download"
         },
         {
-            "message_id": "setr.030.001.02",
-            "message_name": "SecuritiesTradeConfirmationResponseV02",
+            "message_id": "setr.030.001.03",
+            "message_name": "SecuritiesTradeConfirmationResponseV03",
             "submitting_organization": "Omgeo/SWIFT",
-            "download_link": "https://www.iso20022.org/message/22700/download"
+            "download_link": "https://www.iso20022.org/message/23222/download"
         },
         {
-            "message_id": "setr.044.001.03",
-            "message_name": "SecuritiesTradeConfirmationStatusAdviceV03",
+            "message_id": "setr.044.001.04",
+            "message_name": "SecuritiesTradeConfirmationStatusAdviceV04",
             "submitting_organization": "Omgeo/SWIFT",
-            "download_link": "https://www.iso20022.org/message/22702/download"
+            "download_link": "https://www.iso20022.org/message/23223/download"
         },
         {
             "message_id": "setr.047.001.02",
@@ -4015,22 +4027,10 @@
             "download_link": "https://www.iso20022.org/message/18246/download"
         },
         {
-            "message_id": "setr.048.001.01",
-            "message_name": "SubscriptionOrderConfirmationAmendmentV01",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/19326/download"
-        },
-        {
             "message_id": "setr.049.001.02",
             "message_name": "SubscriptionBulkOrderConfirmationCancellationInstructionV02",
             "submitting_organization": "SWIFT",
             "download_link": "https://www.iso20022.org/message/18256/download"
-        },
-        {
-            "message_id": "setr.050.001.01",
-            "message_name": "SubscriptionBulkOrderConfirmationAmendmentV01",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/19331/download"
         },
         {
             "message_id": "setr.051.001.02",
@@ -4039,34 +4039,16 @@
             "download_link": "https://www.iso20022.org/message/18266/download"
         },
         {
-            "message_id": "setr.052.001.01",
-            "message_name": "RedemptionOrderConfirmationAmendmentV01",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/19336/download"
-        },
-        {
             "message_id": "setr.053.001.02",
             "message_name": "RedemptionBulkOrderConfirmationCancellationInstructionV02",
             "submitting_organization": "SWIFT",
             "download_link": "https://www.iso20022.org/message/18276/download"
         },
         {
-            "message_id": "setr.054.001.01",
-            "message_name": "RedemptionBulkOrderConfirmationAmendmentV01",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/19341/download"
-        },
-        {
             "message_id": "setr.055.001.02",
             "message_name": "SwitchOrderConfirmationCancellationInstructionV02",
             "submitting_organization": "SWIFT",
             "download_link": "https://www.iso20022.org/message/18286/download"
-        },
-        {
-            "message_id": "setr.056.001.01",
-            "message_name": "SwitchOrderConfirmationAmendmentV01",
-            "submitting_organization": "SWIFT",
-            "download_link": "https://www.iso20022.org/message/19346/download"
         },
         {
             "message_id": "setr.057.001.02",
