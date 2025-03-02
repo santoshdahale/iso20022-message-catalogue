@@ -207,12 +207,6 @@
     ],
     "admi": [
         {
-            "message_id": "admi.002.001.01",
-            "message_name": "MessageRejectV01",
-            "submitting_organization": "CLS",
-            "download_link": "https://www.iso20022.org/message/10126/download"
-        },
-        {
             "message_id": "admi.004.001.02",
             "message_name": "SystemEventNotificationV02",
             "submitting_organization": "CLS",
@@ -235,30 +229,6 @@
             "message_name": "ReceiptAcknowledgementV01",
             "submitting_organization": "T2S",
             "download_link": "https://www.iso20022.org/message/10181/download"
-        },
-        {
-            "message_id": "admi.009.001.02",
-            "message_name": "StaticDataRequestV02",
-            "submitting_organization": "CLS",
-            "download_link": "https://www.iso20022.org/message/10146/download"
-        },
-        {
-            "message_id": "admi.010.001.02",
-            "message_name": "StaticDataReportV02",
-            "submitting_organization": "CLS",
-            "download_link": "https://www.iso20022.org/message/10156/download"
-        },
-        {
-            "message_id": "admi.011.001.01",
-            "message_name": "SystemEventAcknowledgementV01",
-            "submitting_organization": "CLS",
-            "download_link": "https://www.iso20022.org/message/10161/download"
-        },
-        {
-            "message_id": "admi.017.001.02",
-            "message_name": "ProcessingRequestV02",
-            "submitting_organization": "CLS",
-            "download_link": "https://www.iso20022.org/message/22748/download"
         },
         {
             "message_id": "admi.024.001.01",
@@ -1599,24 +1569,6 @@
             "download_link": "https://www.iso20022.org/message/22860/download"
         },
         {
-            "message_id": "camt.061.001.02",
-            "message_name": "PayInCallV02",
-            "submitting_organization": "CLS",
-            "download_link": "https://www.iso20022.org/message/12981/download"
-        },
-        {
-            "message_id": "camt.062.001.03",
-            "message_name": "PayInScheduleV03",
-            "submitting_organization": "CLS",
-            "download_link": "https://www.iso20022.org/message/12996/download"
-        },
-        {
-            "message_id": "camt.063.001.02",
-            "message_name": "PayInEventAcknowledgementV02",
-            "submitting_organization": "CLS",
-            "download_link": "https://www.iso20022.org/message/13006/download"
-        },
-        {
             "message_id": "camt.064.001.01",
             "message_name": "LimitUtilisationJournalQueryV01",
             "submitting_organization": "4CBs and Swift",
@@ -1815,10 +1767,10 @@
             "download_link": "https://www.iso20022.org/message/22837/download"
         },
         {
-            "message_id": "camt.111.001.01",
-            "message_name": "InvestigationResponseV01",
+            "message_id": "camt.111.001.02",
+            "message_name": "InvestigationResponseV02",
             "submitting_organization": "PaySEG E&I work group",
-            "download_link": "https://www.iso20022.org/message/22839/download"
+            "download_link": "https://www.iso20022.org/message/23272/download"
         }
     ],
     "canm": [
@@ -2259,12 +2211,6 @@
             "message_name": "ForeignExchangeTradeStatusNotificationV07",
             "submitting_organization": "CLS",
             "download_link": "https://www.iso20022.org/message/22781/download"
-        },
-        {
-            "message_id": "fxtr.013.001.03",
-            "message_name": "ForeignExchangeTradeWithdrawalNotificationV03",
-            "submitting_organization": "CLS",
-            "download_link": "https://www.iso20022.org/message/13871/download"
         },
         {
             "message_id": "fxtr.014.001.05",
@@ -2755,18 +2701,6 @@
             "download_link": "https://www.iso20022.org/message/14781/download"
         },
         {
-            "message_id": "reda.060.001.02",
-            "message_name": "NettingCutOffReferenceDataUpdateRequestV02",
-            "submitting_organization": "CLS",
-            "download_link": "https://www.iso20022.org/message/22755/download"
-        },
-        {
-            "message_id": "reda.061.001.02",
-            "message_name": "NettingCutOffReferenceDataReportV02",
-            "submitting_organization": "CLS",
-            "download_link": "https://www.iso20022.org/message/22756/download"
-        },
-        {
             "message_id": "reda.064.001.02",
             "message_name": "CalendarQueryV02",
             "submitting_organization": "T2-T2S",
@@ -2959,10 +2893,10 @@
             "download_link": "https://www.iso20022.org/message/23204/download"
         },
         {
-            "message_id": "seev.009.001.01",
-            "message_name": "AgentCANotificationAdviceV01",
+            "message_id": "seev.009.001.02",
+            "message_name": "AgentCANotificationAdviceV02",
             "submitting_organization": "Euroclear",
-            "download_link": "https://www.iso20022.org/message/15291/download"
+            "download_link": "https://www.iso20022.org/message/23263/download"
         },
         {
             "message_id": "seev.010.001.01",
@@ -2971,10 +2905,10 @@
             "download_link": "https://www.iso20022.org/message/15296/download"
         },
         {
-            "message_id": "seev.011.001.02",
-            "message_name": "AgentCANotificationStatusAdviceV02",
+            "message_id": "seev.011.001.03",
+            "message_name": "AgentCANotificationStatusAdviceV03",
             "submitting_organization": "Euroclear",
-            "download_link": "https://www.iso20022.org/message/22942/download"
+            "download_link": "https://www.iso20022.org/message/23264/download"
         },
         {
             "message_id": "seev.012.001.01",
