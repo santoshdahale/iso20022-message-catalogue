@@ -521,10 +521,10 @@
             "download_link": "https://www.iso20022.org/message/10466/download"
         },
         {
-            "message_id": "auth.059.001.01",
-            "message_name": "CCPIncomeStatementAndCapitalAdequacyReportV01",
+            "message_id": "auth.059.001.02",
+            "message_name": "CCPIncomeStatementAndCapitalAdequacyReportV02",
             "submitting_organization": "Bank of England",
-            "download_link": "https://www.iso20022.org/message/10471/download"
+            "download_link": "https://www.iso20022.org/message/23280/download"
         },
         {
             "message_id": "auth.060.001.02",
@@ -533,10 +533,10 @@
             "download_link": "https://www.iso20022.org/message/22880/download"
         },
         {
-            "message_id": "auth.061.001.01",
-            "message_name": "CCPInvestmentsReportV01",
+            "message_id": "auth.061.001.02",
+            "message_name": "CCPInvestmentsReportV02",
             "submitting_organization": "Bank of England",
-            "download_link": "https://www.iso20022.org/message/10481/download"
+            "download_link": "https://www.iso20022.org/message/23281/download"
         },
         {
             "message_id": "auth.062.001.01",
@@ -551,10 +551,10 @@
             "download_link": "https://www.iso20022.org/message/10491/download"
         },
         {
-            "message_id": "auth.064.001.01",
-            "message_name": "CCPAvailableFinancialResourcesReportV01",
+            "message_id": "auth.064.001.02",
+            "message_name": "CCPAvailableFinancialResourcesReportV02",
             "submitting_organization": "Bank of England",
-            "download_link": "https://www.iso20022.org/message/10496/download"
+            "download_link": "https://www.iso20022.org/message/23278/download"
         },
         {
             "message_id": "auth.065.001.01",
@@ -581,10 +581,10 @@
             "download_link": "https://www.iso20022.org/message/10516/download"
         },
         {
-            "message_id": "auth.069.001.01",
-            "message_name": "CCPClearedProductReportV01",
+            "message_id": "auth.069.001.02",
+            "message_name": "CCPClearedProductReportV02",
             "submitting_organization": "Bank of England",
-            "download_link": "https://www.iso20022.org/message/10521/download"
+            "download_link": "https://www.iso20022.org/message/23279/download"
         },
         {
             "message_id": "auth.070.001.02",
@@ -2783,28 +2783,28 @@
     ],
     "secl": [
         {
-            "message_id": "secl.001.001.03",
-            "message_name": "TradeLegNotificationV03",
-            "submitting_organization": "SWIFT and FPL",
-            "download_link": "https://www.iso20022.org/message/14921/download"
+            "message_id": "secl.001.001.04",
+            "message_name": "TradeLegNotificationV04",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23276/download"
         },
         {
-            "message_id": "secl.002.001.03",
-            "message_name": "TradeLegNotificationCancellationV03",
-            "submitting_organization": "SWIFT and FPL",
-            "download_link": "https://www.iso20022.org/message/14936/download"
+            "message_id": "secl.002.001.04",
+            "message_name": "TradeLegNotificationCancellationV04",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23275/download"
         },
         {
-            "message_id": "secl.003.001.03",
-            "message_name": "TradeLegStatementV03",
-            "submitting_organization": "SWIFT and FPL",
-            "download_link": "https://www.iso20022.org/message/14951/download"
+            "message_id": "secl.003.001.04",
+            "message_name": "TradeLegStatementV04",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23277/download"
         },
         {
-            "message_id": "secl.004.001.03",
-            "message_name": "NetPositionV03",
-            "submitting_organization": "SWIFT and FPL",
-            "download_link": "https://www.iso20022.org/message/14966/download"
+            "message_id": "secl.004.001.04",
+            "message_name": "NetPositionV04",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23273/download"
         },
         {
             "message_id": "secl.005.001.02",
@@ -2837,10 +2837,10 @@
             "download_link": "https://www.iso20022.org/message/15031/download"
         },
         {
-            "message_id": "secl.010.001.03",
-            "message_name": "SettlementObligationReportV03",
-            "submitting_organization": "SWIFT and FPL",
-            "download_link": "https://www.iso20022.org/message/15046/download"
+            "message_id": "secl.010.001.04",
+            "message_name": "SettlementObligationReportV04",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23274/download"
         }
     ],
     "seev": [
