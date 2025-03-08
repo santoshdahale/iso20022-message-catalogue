@@ -971,34 +971,34 @@
     ],
     "caam": [
         {
-            "message_id": "caam.001.001.03",
-            "message_name": "ATMDeviceReportV03",
-            "submitting_organization": "nexo A.I.S.B.L. & IFX",
-            "download_link": "https://www.iso20022.org/message/11211/download"
+            "message_id": "caam.001.001.04",
+            "message_name": "ATMDeviceReportV04",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23282/download"
         },
         {
-            "message_id": "caam.002.001.03",
-            "message_name": "ATMDeviceControlV03",
-            "submitting_organization": "nexo A.I.S.B.L. & IFX",
-            "download_link": "https://www.iso20022.org/message/11226/download"
+            "message_id": "caam.002.001.04",
+            "message_name": "ATMDeviceControlV04",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23283/download"
         },
         {
-            "message_id": "caam.003.001.03",
-            "message_name": "ATMKeyDownloadRequestV03",
-            "submitting_organization": "nexo A.I.S.B.L. & IFX",
-            "download_link": "https://www.iso20022.org/message/11241/download"
+            "message_id": "caam.003.001.04",
+            "message_name": "ATMKeyDownloadRequestV04",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23284/download"
         },
         {
-            "message_id": "caam.004.001.03",
-            "message_name": "ATMKeyDownloadResponseV03",
-            "submitting_organization": "nexo A.I.S.B.L. & IFX",
-            "download_link": "https://www.iso20022.org/message/11256/download"
+            "message_id": "caam.004.001.04",
+            "message_name": "ATMKeyDownloadResponseV04",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23285/download"
         },
         {
-            "message_id": "caam.005.001.02",
-            "message_name": "ATMDiagnosticRequestV02",
-            "submitting_organization": "nexo A.I.S.B.L. & IFX",
-            "download_link": "https://www.iso20022.org/message/11266/download"
+            "message_id": "caam.005.001.03",
+            "message_name": "ATMDiagnosticRequestV03",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23286/download"
         },
         {
             "message_id": "caam.006.001.02",
@@ -1019,28 +1019,52 @@
             "download_link": "https://www.iso20022.org/message/11286/download"
         },
         {
-            "message_id": "caam.009.001.02",
-            "message_name": "ATMReconciliationAdviceV02",
-            "submitting_organization": "nexo A.I.S.B.L. & IFX",
-            "download_link": "https://www.iso20022.org/message/11296/download"
+            "message_id": "caam.009.001.03",
+            "message_name": "ATMReconciliationAdviceV03",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23287/download"
         },
         {
-            "message_id": "caam.010.001.02",
-            "message_name": "ATMReconciliationAcknowledgementV02",
-            "submitting_organization": "nexo A.I.S.B.L. & IFX",
-            "download_link": "https://www.iso20022.org/message/11306/download"
+            "message_id": "caam.010.001.03",
+            "message_name": "ATMReconciliationAcknowledgementV03",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23288/download"
         },
         {
-            "message_id": "caam.011.001.01",
-            "message_name": "ATMExceptionAdviceV01",
-            "submitting_organization": "nexo A.I.S.B.L. & IFX",
-            "download_link": "https://www.iso20022.org/message/11311/download"
+            "message_id": "caam.011.001.02",
+            "message_name": "ATMExceptionAdviceV02",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23289/download"
         },
         {
-            "message_id": "caam.012.001.01",
-            "message_name": "ATMExceptionAcknowledgementV01",
-            "submitting_organization": "nexo A.I.S.B.L. & IFX",
-            "download_link": "https://www.iso20022.org/message/11316/download"
+            "message_id": "caam.012.001.02",
+            "message_name": "ATMExceptionAcknowledgementV02",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23290/download"
+        },
+        {
+            "message_id": "caam.013.001.01",
+            "message_name": "ATMConfigurationReportV01",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23307/download"
+        },
+        {
+            "message_id": "caam.014.001.01",
+            "message_name": "ATMConfigurationControlV01",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23308/download"
+        },
+        {
+            "message_id": "caam.015.001.01",
+            "message_name": "ATMReconciliationRequestV01",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23309/download"
+        },
+        {
+            "message_id": "caam.016.001.01",
+            "message_name": "ATMReconciliationResponseV01",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23310/download"
         }
     ],
     "cafc": [
@@ -1801,76 +1825,76 @@
     ],
     "casp": [
         {
-            "message_id": "casp.001.001.06",
-            "message_name": "SaleToPOIServiceRequestV06",
+            "message_id": "casp.001.001.07",
+            "message_name": "SaleToPOIServiceRequestV07",
             "submitting_organization": "nexo",
-            "download_link": "https://www.iso20022.org/message/22991/download"
+            "download_link": "https://www.iso20022.org/message/23311/download"
         },
         {
-            "message_id": "casp.002.001.06",
-            "message_name": "SaleToPOIServiceResponseV06",
+            "message_id": "casp.002.001.07",
+            "message_name": "SaleToPOIServiceResponseV07",
             "submitting_organization": "nexo",
-            "download_link": "https://www.iso20022.org/message/22992/download"
+            "download_link": "https://www.iso20022.org/message/23312/download"
         },
         {
-            "message_id": "casp.003.001.06",
-            "message_name": "SaleToPOIReconciliationRequestV06",
+            "message_id": "casp.003.001.07",
+            "message_name": "SaleToPOIReconciliationRequestV07",
             "submitting_organization": "nexo",
-            "download_link": "https://www.iso20022.org/message/22993/download"
+            "download_link": "https://www.iso20022.org/message/23313/download"
         },
         {
-            "message_id": "casp.004.001.06",
-            "message_name": "SaleToPOIReconciliationResponseV06",
+            "message_id": "casp.004.001.07",
+            "message_name": "SaleToPOIReconciliationResponseV07",
             "submitting_organization": "nexo",
-            "download_link": "https://www.iso20022.org/message/22994/download"
+            "download_link": "https://www.iso20022.org/message/23314/download"
         },
         {
-            "message_id": "casp.005.001.06",
-            "message_name": "SaleToPOISessionManagementRequestV06",
+            "message_id": "casp.005.001.07",
+            "message_name": "SaleToPOISessionManagementRequestV07",
             "submitting_organization": "nexo",
-            "download_link": "https://www.iso20022.org/message/22995/download"
+            "download_link": "https://www.iso20022.org/message/23315/download"
         },
         {
-            "message_id": "casp.006.001.06",
-            "message_name": "SaleToPOISessionManagementResponseV06",
+            "message_id": "casp.006.001.07",
+            "message_name": "SaleToPOISessionManagementResponseV07",
             "submitting_organization": "nexo",
-            "download_link": "https://www.iso20022.org/message/22996/download"
+            "download_link": "https://www.iso20022.org/message/23316/download"
         },
         {
-            "message_id": "casp.007.001.06",
-            "message_name": "SaleToPOIAdministrativeRequestV06",
+            "message_id": "casp.007.001.07",
+            "message_name": "SaleToPOIAdministrativeRequestV07",
             "submitting_organization": "nexo",
-            "download_link": "https://www.iso20022.org/message/22997/download"
+            "download_link": "https://www.iso20022.org/message/23317/download"
         },
         {
-            "message_id": "casp.008.001.06",
-            "message_name": "SaleToPOIAdministrativeResponseV06",
+            "message_id": "casp.008.001.07",
+            "message_name": "SaleToPOIAdministrativeResponseV07",
             "submitting_organization": "nexo",
-            "download_link": "https://www.iso20022.org/message/22998/download"
+            "download_link": "https://www.iso20022.org/message/23318/download"
         },
         {
-            "message_id": "casp.009.001.06",
-            "message_name": "SaleToPOIReportRequestV06",
+            "message_id": "casp.009.001.07",
+            "message_name": "SaleToPOIReportRequestV07",
             "submitting_organization": "nexo",
-            "download_link": "https://www.iso20022.org/message/22999/download"
+            "download_link": "https://www.iso20022.org/message/23319/download"
         },
         {
-            "message_id": "casp.010.001.06",
-            "message_name": "SaleToPOIReportResponseV06",
+            "message_id": "casp.010.001.07",
+            "message_name": "SaleToPOIReportResponseV07",
             "submitting_organization": "nexo",
-            "download_link": "https://www.iso20022.org/message/23000/download"
+            "download_link": "https://www.iso20022.org/message/23320/download"
         },
         {
-            "message_id": "casp.011.001.06",
-            "message_name": "SaleToPOIAbortV06",
+            "message_id": "casp.011.001.07",
+            "message_name": "SaleToPOIAbortV07",
             "submitting_organization": "nexo",
-            "download_link": "https://www.iso20022.org/message/23001/download"
+            "download_link": "https://www.iso20022.org/message/23321/download"
         },
         {
-            "message_id": "casp.012.001.06",
-            "message_name": "SaleToPOIEventNotificationV06",
+            "message_id": "casp.012.001.07",
+            "message_name": "SaleToPOIEventNotificationV07",
             "submitting_organization": "nexo",
-            "download_link": "https://www.iso20022.org/message/23002/download"
+            "download_link": "https://www.iso20022.org/message/23322/download"
         },
         {
             "message_id": "casp.013.001.02",
@@ -1879,28 +1903,28 @@
             "download_link": "https://www.iso20022.org/message/19861/download"
         },
         {
-            "message_id": "casp.014.001.06",
-            "message_name": "SaleToPOIMessageStatusRequestV06",
+            "message_id": "casp.014.001.07",
+            "message_name": "SaleToPOIMessageStatusRequestV07",
             "submitting_organization": "nexo",
-            "download_link": "https://www.iso20022.org/message/23003/download"
+            "download_link": "https://www.iso20022.org/message/23323/download"
         },
         {
-            "message_id": "casp.015.001.06",
-            "message_name": "SaleToPOIMessageStatusResponseV06",
+            "message_id": "casp.015.001.07",
+            "message_name": "SaleToPOIMessageStatusResponseV07",
             "submitting_organization": "nexo",
-            "download_link": "https://www.iso20022.org/message/23004/download"
+            "download_link": "https://www.iso20022.org/message/23324/download"
         },
         {
-            "message_id": "casp.016.001.06",
-            "message_name": "SaleToPOIDeviceRequestV06",
+            "message_id": "casp.016.001.07",
+            "message_name": "SaleToPOIDeviceRequestV07",
             "submitting_organization": "nexo",
-            "download_link": "https://www.iso20022.org/message/23005/download"
+            "download_link": "https://www.iso20022.org/message/23325/download"
         },
         {
-            "message_id": "casp.017.001.06",
-            "message_name": "SaleToPOIDeviceResponseV06",
+            "message_id": "casp.017.001.07",
+            "message_name": "SaleToPOIDeviceResponseV07",
             "submitting_organization": "nexo",
-            "download_link": "https://www.iso20022.org/message/23006/download"
+            "download_link": "https://www.iso20022.org/message/23326/download"
         }
     ],
     "casr": [
@@ -1969,28 +1993,28 @@
     ],
     "catp": [
         {
-            "message_id": "catp.001.001.02",
-            "message_name": "ATMWithdrawalRequestV02",
-            "submitting_organization": "nexo A.I.S.B.L. & IFX",
-            "download_link": "https://www.iso20022.org/message/13401/download"
+            "message_id": "catp.001.001.03",
+            "message_name": "ATMWithdrawalRequestV03",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23291/download"
         },
         {
-            "message_id": "catp.002.001.02",
-            "message_name": "ATMWithdrawalResponseV02",
-            "submitting_organization": "nexo A.I.S.B.L. & IFX",
-            "download_link": "https://www.iso20022.org/message/13411/download"
+            "message_id": "catp.002.001.03",
+            "message_name": "ATMWithdrawalResponseV03",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23292/download"
         },
         {
-            "message_id": "catp.003.001.02",
-            "message_name": "ATMWithdrawalCompletionAdviceV02",
-            "submitting_organization": "nexo A.I.S.B.L. & IFX",
-            "download_link": "https://www.iso20022.org/message/13421/download"
+            "message_id": "catp.003.001.03",
+            "message_name": "ATMWithdrawalCompletionAdviceV03",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23293/download"
         },
         {
-            "message_id": "catp.004.001.02",
-            "message_name": "ATMWithdrawalCompletionAcknowledgementV02",
-            "submitting_organization": "nexo A.I.S.B.L. & IFX",
-            "download_link": "https://www.iso20022.org/message/13431/download"
+            "message_id": "catp.004.001.03",
+            "message_name": "ATMWithdrawalCompletionAcknowledgementV03",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23294/download"
         },
         {
             "message_id": "catp.005.001.02",
@@ -1999,76 +2023,76 @@
             "download_link": "https://www.iso20022.org/message/13441/download"
         },
         {
-            "message_id": "catp.006.001.02",
-            "message_name": "ATMInquiryRequestV02",
-            "submitting_organization": "nexo A.I.S.B.L. & IFX",
-            "download_link": "https://www.iso20022.org/message/13451/download"
+            "message_id": "catp.006.001.03",
+            "message_name": "ATMInquiryRequestV03",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23295/download"
         },
         {
-            "message_id": "catp.007.001.02",
-            "message_name": "ATMInquiryResponseV02",
-            "submitting_organization": "nexo A.I.S.B.L. & IFX",
-            "download_link": "https://www.iso20022.org/message/13461/download"
+            "message_id": "catp.007.001.03",
+            "message_name": "ATMInquiryResponseV03",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23296/download"
         },
         {
-            "message_id": "catp.008.001.02",
-            "message_name": "ATMCompletionAdviceV02",
-            "submitting_organization": "nexo A.I.S.B.L. & IFX",
-            "download_link": "https://www.iso20022.org/message/13471/download"
+            "message_id": "catp.008.001.03",
+            "message_name": "ATMCompletionAdviceV03",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23297/download"
         },
         {
-            "message_id": "catp.009.001.02",
-            "message_name": "ATMCompletionAcknowledgementV02",
-            "submitting_organization": "nexo A.I.S.B.L. & IFX",
-            "download_link": "https://www.iso20022.org/message/13481/download"
+            "message_id": "catp.009.001.03",
+            "message_name": "ATMCompletionAcknowledgementV03",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23298/download"
         },
         {
-            "message_id": "catp.010.001.02",
-            "message_name": "ATMPINManagementRequestV02",
-            "submitting_organization": "nexo A.I.S.B.L. & IFX",
-            "download_link": "https://www.iso20022.org/message/13491/download"
+            "message_id": "catp.010.001.03",
+            "message_name": "ATMPINManagementRequestV03",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23299/download"
         },
         {
-            "message_id": "catp.011.001.02",
-            "message_name": "ATMPINManagementResponseV02",
-            "submitting_organization": "nexo A.I.S.B.L. & IFX",
-            "download_link": "https://www.iso20022.org/message/13501/download"
+            "message_id": "catp.011.001.03",
+            "message_name": "ATMPINManagementResponseV03",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23300/download"
         },
         {
-            "message_id": "catp.012.001.01",
-            "message_name": "ATMDepositRequestV01",
-            "submitting_organization": "nexo A.I.S.B.L. & IFX",
-            "download_link": "https://www.iso20022.org/message/13506/download"
+            "message_id": "catp.012.001.02",
+            "message_name": "ATMDepositRequestV02",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23301/download"
         },
         {
-            "message_id": "catp.013.001.01",
-            "message_name": "ATMDepositResponseV01",
-            "submitting_organization": "nexo A.I.S.B.L. & IFX",
-            "download_link": "https://www.iso20022.org/message/13511/download"
+            "message_id": "catp.013.001.02",
+            "message_name": "ATMDepositResponseV02",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23302/download"
         },
         {
-            "message_id": "catp.014.001.01",
-            "message_name": "ATMDepositCompletionAdviceV01",
-            "submitting_organization": "nexo A.I.S.B.L. & IFX",
-            "download_link": "https://www.iso20022.org/message/13516/download"
+            "message_id": "catp.014.001.02",
+            "message_name": "ATMDepositCompletionAdviceV02",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23303/download"
         },
         {
-            "message_id": "catp.015.001.01",
-            "message_name": "ATMDepositCompletionAcknowledgementV01",
-            "submitting_organization": "nexo A.I.S.B.L. & IFX",
-            "download_link": "https://www.iso20022.org/message/13521/download"
+            "message_id": "catp.015.001.02",
+            "message_name": "ATMDepositCompletionAcknowledgementV02",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23304/download"
         },
         {
-            "message_id": "catp.016.001.01",
-            "message_name": "ATMTransferRequestV01",
-            "submitting_organization": "nexo A.I.S.B.L. & IFX",
-            "download_link": "https://www.iso20022.org/message/13526/download"
+            "message_id": "catp.016.001.02",
+            "message_name": "ATMTransferRequestV02",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23305/download"
         },
         {
-            "message_id": "catp.017.001.01",
-            "message_name": "ATMTransferResponseV01",
-            "submitting_organization": "nexo A.I.S.B.L. & IFX",
-            "download_link": "https://www.iso20022.org/message/13531/download"
+            "message_id": "catp.017.001.02",
+            "message_name": "ATMTransferResponseV02",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23306/download"
         }
     ],
     "colr": [
