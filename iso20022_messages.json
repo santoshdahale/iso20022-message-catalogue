@@ -743,6 +743,170 @@
             "download_link": "https://www.iso20022.org/message/22822/download"
         }
     ],
+    "caaa": [
+        {
+            "message_id": "caaa.001.001.14",
+            "message_name": "AcceptorAuthorisationRequestV14",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23337/download"
+        },
+        {
+            "message_id": "caaa.002.001.14",
+            "message_name": "AcceptorAuthorisationResponseV14",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23327/download"
+        },
+        {
+            "message_id": "caaa.003.001.14",
+            "message_name": "AcceptorCompletionAdviceV14",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23328/download"
+        },
+        {
+            "message_id": "caaa.004.001.13",
+            "message_name": "AcceptorCompletionAdviceResponseV13",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23329/download"
+        },
+        {
+            "message_id": "caaa.005.001.14",
+            "message_name": "AcceptorCancellationRequestV14",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23330/download"
+        },
+        {
+            "message_id": "caaa.006.001.13",
+            "message_name": "AcceptorCancellationResponseV13",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23331/download"
+        },
+        {
+            "message_id": "caaa.007.001.14",
+            "message_name": "AcceptorCancellationAdviceV14",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23332/download"
+        },
+        {
+            "message_id": "caaa.008.001.13",
+            "message_name": "AcceptorCancellationAdviceResponseV13",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23333/download"
+        },
+        {
+            "message_id": "caaa.009.001.13",
+            "message_name": "AcceptorReconciliationRequestV13",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23334/download"
+        },
+        {
+            "message_id": "caaa.010.001.12",
+            "message_name": "AcceptorReconciliationResponseV12",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23335/download"
+        },
+        {
+            "message_id": "caaa.011.001.14",
+            "message_name": "AcceptorBatchTransferV14",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23336/download"
+        },
+        {
+            "message_id": "caaa.012.001.13",
+            "message_name": "AcceptorBatchTransferResponseV13",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23338/download"
+        },
+        {
+            "message_id": "caaa.013.001.13",
+            "message_name": "AcceptorDiagnosticRequestV13",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23339/download"
+        },
+        {
+            "message_id": "caaa.014.001.12",
+            "message_name": "AcceptorDiagnosticResponseV12",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23340/download"
+        },
+        {
+            "message_id": "caaa.015.001.06",
+            "message_name": "AcceptorRejectionV06",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/19996/download"
+        },
+        {
+            "message_id": "caaa.016.001.12",
+            "message_name": "AcceptorCurrencyConversionRequestV12",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23341/download"
+        },
+        {
+            "message_id": "caaa.017.001.12",
+            "message_name": "AcceptorCurrencyConversionResponseV12",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23342/download"
+        },
+        {
+            "message_id": "caaa.018.001.09",
+            "message_name": "AcceptorCurrencyConversionAdviceV09",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23343/download"
+        },
+        {
+            "message_id": "caaa.019.001.08",
+            "message_name": "AcceptorCurrencyConversionAdviceResponseV08",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23344/download"
+        },
+        {
+            "message_id": "caaa.020.001.06",
+            "message_name": "TransactionAdviceV06",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23345/download"
+        },
+        {
+            "message_id": "caaa.021.001.06",
+            "message_name": "TransactionAdviceResponseV06",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23346/download"
+        },
+        {
+            "message_id": "caaa.022.001.05",
+            "message_name": "AcceptorNonFinancialRequestV05",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23347/download"
+        },
+        {
+            "message_id": "caaa.023.001.05",
+            "message_name": "AcceptorNonFinancialResponseV05",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23348/download"
+        },
+        {
+            "message_id": "caaa.024.001.05",
+            "message_name": "AcceptorTransactionLogReportRequestV05",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23349/download"
+        },
+        {
+            "message_id": "caaa.025.001.05",
+            "message_name": "AcceptorTransactionLogReportResponseV05",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23350/download"
+        },
+        {
+            "message_id": "caaa.026.001.02",
+            "message_name": "AcceptorToAcquirerBatchFileExchangeV02",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23351/download"
+        },
+        {
+            "message_id": "caaa.027.001.02",
+            "message_name": "AcquirerToAcceptorBatchFileExchangeV02",
+            "submitting_organization": "nexo",
+            "download_link": "https://www.iso20022.org/message/23352/download"
+        }
+    ],
     "caad": [
         {
             "message_id": "caad.001.001.03",
@@ -1779,22 +1943,22 @@
     ],
     "catm": [
         {
-            "message_id": "catm.001.001.13",
-            "message_name": "StatusReportV13",
+            "message_id": "catm.001.001.14",
+            "message_name": "StatusReportV14",
             "submitting_organization": "nexo",
-            "download_link": "https://www.iso20022.org/message/23019/download"
+            "download_link": "https://www.iso20022.org/message/23353/download"
         },
         {
-            "message_id": "catm.002.001.12",
-            "message_name": "ManagementPlanReplacementV12",
+            "message_id": "catm.002.001.13",
+            "message_name": "ManagementPlanReplacementV13",
             "submitting_organization": "nexo",
-            "download_link": "https://www.iso20022.org/message/23020/download"
+            "download_link": "https://www.iso20022.org/message/23354/download"
         },
         {
-            "message_id": "catm.003.001.13",
-            "message_name": "AcceptorConfigurationUpdateV13",
+            "message_id": "catm.003.001.14",
+            "message_name": "AcceptorConfigurationUpdateV14",
             "submitting_organization": "nexo",
-            "download_link": "https://www.iso20022.org/message/23021/download"
+            "download_link": "https://www.iso20022.org/message/23355/download"
         },
         {
             "message_id": "catm.004.001.05",
@@ -1803,10 +1967,10 @@
             "download_link": "https://www.iso20022.org/message/19901/download"
         },
         {
-            "message_id": "catm.005.001.10",
-            "message_name": "MaintenanceDelegationRequestV10",
+            "message_id": "catm.005.001.11",
+            "message_name": "MaintenanceDelegationRequestV11",
             "submitting_organization": "nexo",
-            "download_link": "https://www.iso20022.org/message/23022/download"
+            "download_link": "https://www.iso20022.org/message/23356/download"
         },
         {
             "message_id": "catm.006.001.08",
