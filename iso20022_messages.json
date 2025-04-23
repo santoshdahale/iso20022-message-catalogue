@@ -771,6 +771,12 @@
             "message_name": "OrderBookReportV01",
             "submitting_organization": "ESMA",
             "download_link": "https://www.iso20022.org/message/22822/download"
+        },
+        {
+            "message_id": "auth.114.001.01",
+            "message_name": "RegulatoryMetadataReportV01",
+            "submitting_organization": "ESMA",
+            "download_link": "https://www.iso20022.org/message/23360/download"
         }
     ],
     "caaa": [
@@ -2361,6 +2367,12 @@
             "message_name": "ForeignExchangeTradeConfirmationStatusAdviceV02",
             "submitting_organization": "CFETS",
             "download_link": "https://www.iso20022.org/message/23180/download"
+        },
+        {
+            "message_id": "fxtr.038.001.02",
+            "message_name": "ForeignExchangeTradeConfirmationStatusAdviceAcknowledgementV02",
+            "submitting_organization": "CFETS",
+            "download_link": "https://www.iso20022.org/message/23196/download"
         }
     ],
     "head": [
@@ -4085,6 +4097,26 @@
             "message_name": "RequestForOrderConfirmationStatusReportV02",
             "submitting_organization": "SWIFT",
             "download_link": "https://www.iso20022.org/message/18306/download"
+        }
+    ],
+    "trck": [
+        {
+            "message_id": "trck.001.001.04",
+            "message_name": "PaymentStatusTrackerUpdateV04",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23357/download"
+        },
+        {
+            "message_id": "trck.002.001.03",
+            "message_name": "PaymentStatusTrackerReportV03",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23358/download"
+        },
+        {
+            "message_id": "trck.004.001.03",
+            "message_name": "PaymentStatusCustomerTrackerReportV03",
+            "submitting_organization": "Swift",
+            "download_link": "https://www.iso20022.org/message/23359/download"
         }
     ],
     "tsin": [
