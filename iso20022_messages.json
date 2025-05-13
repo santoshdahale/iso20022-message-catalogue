@@ -2659,6 +2659,36 @@
             "download_link": "https://www.iso20022.org/message/14861/download"
         },
         {
+            "message_id": "reda.024.001.01",
+            "message_name": "CollateralValueCreationRequestV01",
+            "submitting_organization": "4CBs and Swift",
+            "download_link": "https://www.iso20022.org/message/23361/download"
+        },
+        {
+            "message_id": "reda.025.001.01",
+            "message_name": "EligibleSecuritiesCreationRequestV01",
+            "submitting_organization": "4CBs and Swift",
+            "download_link": "https://www.iso20022.org/message/23362/download"
+        },
+        {
+            "message_id": "reda.026.001.01",
+            "message_name": "EligibleCounterpartCSDCreationRequestV01",
+            "submitting_organization": "4CBs and Swift",
+            "download_link": "https://www.iso20022.org/message/23363/download"
+        },
+        {
+            "message_id": "reda.027.001.01",
+            "message_name": "CloseLinkCreationRequestV01",
+            "submitting_organization": "4CBs and Swift",
+            "download_link": "https://www.iso20022.org/message/23364/download"
+        },
+        {
+            "message_id": "reda.028.001.01",
+            "message_name": "CollateralDataStatusAdviceV01",
+            "submitting_organization": "4CBs and Swift",
+            "download_link": "https://www.iso20022.org/message/23365/download"
+        },
+        {
             "message_id": "reda.029.001.01",
             "message_name": "SecurityMaintenanceStatusAdviceV01",
             "submitting_organization": "T2S",
@@ -2729,6 +2759,12 @@
             "message_name": "PartyAuditTrailReportV02",
             "submitting_organization": "4CBs and Swift",
             "download_link": "https://www.iso20022.org/message/23077/download"
+        },
+        {
+            "message_id": "reda.044.001.01",
+            "message_name": "EligibleCounterpartCSDStatusAdviceV01",
+            "submitting_organization": "4CBs and Swift",
+            "download_link": "https://www.iso20022.org/message/23366/download"
         },
         {
             "message_id": "reda.045.001.01",
@@ -2867,6 +2903,18 @@
             "message_name": "TripartyCollateralUnilateralRemovalRequestV01",
             "submitting_organization": "SWIFT/Banco de Espana",
             "download_link": "https://www.iso20022.org/message/22462/download"
+        },
+        {
+            "message_id": "reda.075.001.01",
+            "message_name": "EligibleSecuritiesDeletionRequestV01",
+            "submitting_organization": "4CBs and Swift",
+            "download_link": "https://www.iso20022.org/message/23367/download"
+        },
+        {
+            "message_id": "reda.077.001.01",
+            "message_name": "CloseLinkDeletionRequestV01",
+            "submitting_organization": "4CBs and Swift",
+            "download_link": "https://www.iso20022.org/message/23368/download"
         }
     ],
     "remt": [
