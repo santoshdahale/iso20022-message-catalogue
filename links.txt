@@ -1,0 +1,3 @@
+# Official ISO20022 formats links
+
+https://www.iso20022.org/iso-20022-message-definitions?page=0
